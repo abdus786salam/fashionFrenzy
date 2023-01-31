@@ -1,10 +1,15 @@
 import './App.css';
+import Footer from './components/footer/Footer';
+import Navbar from './components/navbar/Navbar';
+import AllRoutes from './HOF/AllRoutes';
 
 function App() {
   return (
-    <div>
-      <h1>hello</h1>
-    </div>
+    <>
+     <Navbar />
+     <AllRoutes />
+     <Footer />
+    </>
   );
 }
 
