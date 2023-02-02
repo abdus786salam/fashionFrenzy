@@ -16,6 +16,7 @@ const productSchema = mongoose.Schema({
   price: {
     type: Number,
     required: true,
+    min:0
   },
   product_type:{type:String,required:true},
   category: {
@@ -25,7 +26,12 @@ const productSchema = mongoose.Schema({
   },
   seller:{
     type:mongoose.Schema.Types.ObjectId,
-    ref:'user',
-    required:true
+    ref:'user'
   },
 });
+
+const ProductModel=mongoose.model('product',productSchema)
+
+module.exports={
+  ProductModel
+}
