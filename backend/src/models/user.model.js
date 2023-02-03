@@ -21,7 +21,7 @@ const userSchema = mongoose.Schema(
     },
     avatar_url: { type: String },
     user_type: {
-      type: String,
+      type: String, 
       default:"user",
       required: true,
       enum: ["user", "seller", "admin"],

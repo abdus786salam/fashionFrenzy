@@ -15,7 +15,7 @@ userRouter.post("/register", async (req, res) => {
   const matchData = await UserModel.findOne({ email });
 
   if (matchData) {
-    res.send({
+    res.status(409).send({
       msg: "user with same email already exist. Please use another email",
     });
   } else {
@@ -49,7 +49,7 @@ userRouter.post("/login", async (req, res) => {
   const { email, password } = req.body;
   const matchData = await UserModel.findOne({ email });
   if (!matchData) {
-    res.send({ msg: "email does not exist" });
+    res.status(401).send({ msg: "email does not exist" });
   } else {
     try {
       bcrypt.compare(password, matchData.password, (err, result) => {
@@ -58,9 +58,9 @@ userRouter.post("/login", async (req, res) => {
             { user_info: matchData },
             process.env.jwtSecretKey
           );
-          res.send({ msg: "Login Sucessfully", token: token });
+          res.status(200).send({ msg: "Login Sucessfully", token: token,user:matchData });
         } else {
-          res.send({ msg: "Wrong password" });
+          res.status(401).send({ msg: "Wrong password" });
         }
       });
     } catch (error) {

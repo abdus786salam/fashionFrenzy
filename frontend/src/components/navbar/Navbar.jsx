@@ -1,13 +1,15 @@
-import { Box, Flex, Heading, HStack, Link, Spacer } from "@chakra-ui/react";
+import { Avatar, Flex, Heading, HStack, Link, Spacer } from "@chakra-ui/react";
 import React, { useCallback, useEffect, useState } from "react";
 import { Link as ReactLink } from "react-router-dom";
+import { useSelector } from 'react-redux'
 import SearchBar from "./SearchBar";
 import countries from "./countries";
 
 const Navbar = () => {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
-
+  const {user,isAuth}=useSelector(store=>store.authReducer)
+  console.log(user,isAuth)
   const queryHandler = useCallback((val) => {
     setQuery(val);
   }, []);
@@ -29,16 +31,18 @@ const Navbar = () => {
   }, [query]);
   return (
     <Flex
-      mx="5"
-      my="2"
       border="1px"
-      p="3"
-      h="50"
+      py="3"
+      px="10"
+      h="60px"
+      bg="#e6b7ab"
+      position="sticky"
+      top="0"
       justifyContent={"space-between"}
     >
       <HStack>
         <Link
-          _hover={{ color: "tomato" }}
+          _hover={{ color: "white" }}
           textDecoration={"none"}
           as={ReactLink}
           to="/"
@@ -49,22 +53,22 @@ const Navbar = () => {
         </Link>
         <Spacer />
         <HStack>
-          <Link _hover={{ color: "tomato" }} as={ReactLink} to="/men">
+          <Link _hover={{ color: "white" }} as={ReactLink} to="/men">
             <Heading as="h3" fontSize={"md"}>
               Men
             </Heading>
           </Link>
-          <Link _hover={{ color: "tomato" }} as={ReactLink} to="/women">
+          <Link _hover={{ color: "white" }} as={ReactLink} to="/women">
             <Heading as="h3" fontSize={"md"}>
               Women
             </Heading>
           </Link>
-          <Link _hover={{ color: "tomato" }} as={ReactLink} to="/kids">
+          <Link _hover={{ color: "white" }} as={ReactLink} to="/kids">
             <Heading as="h3" fontSize={"md"}>
               Kids
             </Heading>
           </Link>
-          <Link _hover={{ color: "tomato" }} as={ReactLink} to="/accessories">
+          <Link _hover={{ color: "white" }} as={ReactLink} to="/accessories">
             <Heading as="h3" fontSize={"md"}>
               Accessories
             </Heading>
@@ -73,12 +77,15 @@ const Navbar = () => {
       </HStack>
       <SearchBar queryHandler={queryHandler} suggestions={suggestions} />
       <HStack>
-        <Link _hover={{ color: "tomato" }} as={ReactLink} to="/login">
+        {
+       isAuth?<Avatar name={user?.name} src={user?.avatar_url} />:   
+        <Link _hover={{ color: "white" }} as={ReactLink} to="/login">
           <Heading as="h3" fontSize={"md"}>
             Login
           </Heading>
         </Link>
-        <Link _hover={{ color: "tomato" }} as={ReactLink} to="/cart">
+        }
+        <Link _hover={{ color: "white" }} as={ReactLink} to="/cart">
           <Heading as="h3" fontSize={"md"}>
             Cart
           </Heading>

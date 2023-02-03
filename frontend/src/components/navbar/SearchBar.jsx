@@ -1,5 +1,4 @@
 import { Search2Icon } from '@chakra-ui/icons'
-import { Icon } from '@chakra-ui/react'
 import React from 'react'
 import { useRef } from 'react'
 import { useEffect } from 'react'
@@ -49,8 +48,8 @@ const SearchBar = ({ queryHandler, suggestions }) => {
     return (
         <Wrapper onKeyUp={handleActiveSuggestion}>
             <SearchBarWrapper>
-            <Search2Icon color='gray' mr='2' />
-                <Input value={input} placeholder='Search for products brands and more' onChange={(e) => setInput(e.target.value)} />
+            <Search2Icon color='gray' mt='1' mr='2' />
+                <Input value={input} placeholder='Search for products, brands and more' onChange={(e) => setInput(e.target.value)} />
             </SearchBarWrapper>
             <SuggestionBox limit={5}
                 suggestionLength={suggestions.length}
@@ -70,7 +69,8 @@ const SearchBar = ({ queryHandler, suggestions }) => {
 export default SearchBar
 
 const SuggestionBox = styled.div`
-border:1px solid black;
+// border:1px solid black;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 max-height:${({ limit }) => `${limit * 39}px`};
 border-top-color:${({ limit }) => limit ? "transparent" : "black"};
 border-bottom-color:${({ suggestionLength }) => suggestionLength ? "black" : "transparent"};
@@ -88,7 +88,7 @@ overflow:auto;
 
 const SearchBarWrapper = styled.div`
 display:flex;
-border-bottom:1px solid gray;
+// border-bottom:1px solid gray;
 `
 
 const Input = styled.input`
@@ -98,6 +98,9 @@ outline:none;
 `
 
 const Wrapper = styled.div`
-width:350px;
+width:500px;
 margin:auto;
+background-color:white;
+padding:7px;
+border-radius:3px;
 `;
