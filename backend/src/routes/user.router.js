@@ -58,7 +58,7 @@ userRouter.post("/login", async (req, res) => {
             { user_info: matchData },
             process.env.jwtSecretKey
           );
-          res.status(200).send({ msg: "Login Sucessfully", token: token,user:matchData });
+          res.status(200).send({ msg: "Login Sucessfully", token: token });
         } else {
           res.status(401).send({ msg: "Wrong password" });
         }
@@ -96,6 +96,21 @@ userRouter.patch(
     }
   }
 );
+
+userRouter.get('/details',(req,res)=>{
+  const token = req.headers.authorization;
+  if (token) {
+    const decoded = jwt.verify(token, process.env.jwtSecretKey);
+    if (decoded) {
+      const user= decoded.user_info;
+    res.status(200).send(user)
+    } else {
+      res.status(400).send("something went wrong");
+    }
+  } else {
+    res.status(400).send("Please login First");
+  }
+})
 
 module.exports = {
   userRouter,

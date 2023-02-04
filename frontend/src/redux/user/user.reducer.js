@@ -25,7 +25,7 @@ const reducer =(state=initialState,{type,payload})=>{
                 isLoading:false,
                 isAuth:true,
                 token:payload.token,
-                user:payload.user
+              
             }
         }
         case types.USER_LOGIN_FAILURE:{
@@ -50,6 +50,26 @@ const reducer =(state=initialState,{type,payload})=>{
             }
         }
         case types.USER_SIGNUP_FAILURE:{
+            return {
+                ...state,
+                isLoading:false,
+                isError:true
+            }
+        }
+        case types.GET_USER_DETAILS_REQUEST:{
+            return {
+                ...state,
+                isLoading:true
+            }
+        }
+        case types.GET_USER_DETAILS_SUCCESS:{
+            return {
+                ...state,
+                isLoading:false,
+                user:payload
+            }
+        }
+        case types.GET_USER_DETAILS_FAILURE:{
             return {
                 ...state,
                 isLoading:false,

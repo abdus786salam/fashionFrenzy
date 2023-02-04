@@ -21,5 +21,21 @@ const loginUser=(data)=>(dispatch)=>{
         dispatch({type:types.USER_LOGIN_FAILURE})
     })
 }
+const getUser=()=>(dispatch)=>{
+   
+    dispatch({type:types.GET_USER_DETAILS_REQUEST})
+    return axios.get(`http://localhost:5604/user/details`,{
+        headers: {
+            "Authorization": localStorage.getItem("token"),
+        }
+      }).then(res=>{
+        dispatch({type:types.GET_USER_DETAILS_SUCCESS,payload:res.data})
+        return res
+    })
+    .catch(err=>{
+        console.log("err",err)
+        dispatch({type:types.GET_USER_DETAILS_FAILURE})
+    })
+}
 
-export { postUserData, loginUser }
+export { postUserData, loginUser, getUser }

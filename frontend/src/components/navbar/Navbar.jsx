@@ -1,11 +1,13 @@
 import { Avatar, Flex, Heading, HStack, Link, Spacer } from "@chakra-ui/react";
 import React, { useCallback, useEffect, useState } from "react";
 import { Link as ReactLink } from "react-router-dom";
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import SearchBar from "./SearchBar";
 import countries from "./countries";
+import { getUser } from "../../redux/user/user.action";
 
 const Navbar = () => {
+  const dispatch=useDispatch()
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const {user,isAuth}=useSelector(store=>store.authReducer)
@@ -29,6 +31,9 @@ const Navbar = () => {
       setSuggestions(newSuggestions);
     }
   }, [query]);
+  useEffect(()=>{
+    dispatch(getUser())
+  },[])
   return (
     <Flex
       border="1px"
