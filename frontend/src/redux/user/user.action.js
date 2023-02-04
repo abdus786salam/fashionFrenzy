@@ -22,20 +22,26 @@ const loginUser=(data)=>(dispatch)=>{
     })
 }
 const getUser=()=>(dispatch)=>{
-   
+   const token=localStorage.getItem("token")
     dispatch({type:types.GET_USER_DETAILS_REQUEST})
-    return axios.get(`http://localhost:5604/user/details`,{
-        headers: {
-            "Authorization": localStorage.getItem("token"),
-        }
-      }).then(res=>{
-        dispatch({type:types.GET_USER_DETAILS_SUCCESS,payload:res.data})
-        return res
-    })
-    .catch(err=>{
-        console.log("err",err)
-        dispatch({type:types.GET_USER_DETAILS_FAILURE})
-    })
+    if(token){
+        return axios.get(`http://localhost:5604/user/details`,{
+            headers: {
+                "Authorization": token,
+            }
+          }).then(res=>{
+            dispatch({type:types.GET_USER_DETAILS_SUCCESS,payload:res.data})
+            return res
+        })
+        .catch(err=>{
+            console.log("err",err)
+            dispatch({type:types.GET_USER_DETAILS_FAILURE})
+        })
+    }
 }
 
-export { postUserData, loginUser, getUser }
+const logOut=()=>(dispatch)=> {
+    dispatch({type:types.USER_LOGOUT})
+}
+
+export { postUserData, loginUser, getUser, logOut }
