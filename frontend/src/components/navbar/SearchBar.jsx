@@ -69,7 +69,6 @@ const SearchBar = ({ queryHandler, suggestions }) => {
 export default SearchBar
 
 const SuggestionBox = styled.div`
-// border:1px solid black;
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 max-height:${({ limit }) => `${limit * 39}px`};
 border-top-color:${({ limit }) => limit ? "transparent" : "black"};

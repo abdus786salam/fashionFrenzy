@@ -5,12 +5,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import SearchBar from "./SearchBar";
 import countries from "./countries";
 import { getUser } from "../../redux/user/user.action";
+import UserProfile from "./UserProfile";
 
 const Navbar = () => {
   const dispatch=useDispatch()
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const {user,isAuth}=useSelector(store=>store.authReducer)
+
   console.log(user,isAuth)
   const queryHandler = useCallback((val) => {
     setQuery(val);
@@ -83,7 +85,7 @@ const Navbar = () => {
       <SearchBar queryHandler={queryHandler} suggestions={suggestions} />
       <HStack>
         {
-       isAuth?<Avatar name={user?.name} src={user?.avatar_url} />:   
+       isAuth?<UserProfile name={user?.name} url={user?.avatar_url} />:   
         <Link _hover={{ color: "white" }} as={ReactLink} to="/login">
           <Heading as="h3" fontSize={"md"}>
             Login

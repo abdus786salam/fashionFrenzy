@@ -15,7 +15,7 @@ import {
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
-import { loginUser } from "../../redux/user/user.action";
+import { getUser, loginUser } from "../../redux/user/user.action";
 import { useNavigate } from "react-router-dom";
 import { Link as ReactLink } from "react-router-dom";
 
@@ -40,12 +40,12 @@ const LoginPage = () => {
     dispatch(loginUser(formData)).then(res=>{
       setFormData(initialData)
       if(res?.data.token){
+        dispatch(getUser())
         alert(res.data.msg)
         navigate('/')
       }
      
     }).catch(err=>{
-      // alert(err.response)
       console.log(err)
     });
   };
