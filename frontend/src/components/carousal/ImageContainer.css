@@ -1,0 +1,7 @@
+.image-div{
+    min-width: 300px;
+    height: 100vh;
+    background-color: aquamarine;
+    margin: 10px;
+    color: black;
+}

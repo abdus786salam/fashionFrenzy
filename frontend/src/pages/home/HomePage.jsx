@@ -1,8 +1,12 @@
 import React from 'react'
+import ImageCarousalBox from './ImageCarousalBox';
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div>
+      <ImageCarousalBox />
+     
+    </div>
   )
 }
 
