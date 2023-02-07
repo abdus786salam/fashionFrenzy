@@ -1,0 +1,36 @@
+.carousal-container{
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.carousal-image-container{
+    padding: 0 10px;
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.image-carousal-btn-left,.image-carousal-btn-right{
+    border: none;
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    
+}
+.image-carousal-btn-right{
+    right: 0;
+}
+.image-carousal-btn-left p,.image-carousal-btn-right p{
+    color: black;
+    font-size: 50px;
+    box-shadow: 0 0 10px 1px black;
+    border-radius: 2px;
+    width: 50px;
+    height: 50px;
+}

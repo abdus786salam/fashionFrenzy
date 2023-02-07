@@ -1,4 +1,4 @@
-import { Avatar, Flex, Heading, HStack, Link, Spacer } from "@chakra-ui/react";
+import { Flex, Heading, HStack, Image, Link, Spacer } from "@chakra-ui/react";
 import React, { useCallback, useEffect, useState } from "react";
 import { Link as ReactLink } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux'
@@ -6,6 +6,7 @@ import SearchBar from "./SearchBar";
 import countries from "./countries";
 import { getUser } from "../../redux/user/user.action";
 import UserProfile from "./UserProfile";
+import NavbarSmallerScreen from "./NavbarSmallerScreen";
 
 const Navbar = () => {
   const dispatch=useDispatch()
@@ -35,10 +36,12 @@ const Navbar = () => {
   }, [query]);
   useEffect(()=>{
     dispatch(getUser())
-  },[])
+  },[dispatch])
   return (
+    <>
     <Flex
-      border="1px"
+    zIndex={2}
+      // border="1px"
       py="3"
       px="10"
       h="60px"
@@ -46,6 +49,7 @@ const Navbar = () => {
       position="sticky"
       top="0"
       justifyContent={"space-between"}
+      display={{ base: "none", lg: "none" }}
     >
       <HStack>
         <Link
@@ -54,9 +58,10 @@ const Navbar = () => {
           as={ReactLink}
           to="/"
         >
-          <Heading as="h3" fontSize={"md"}>
+          <Image h='80px' src='https://user-images.githubusercontent.com/101567617/217269641-c38b6de0-1935-4530-95d5-855ebeb19c7f.png' />
+          {/* <Heading as="h3" fontSize={"md"}>
             Logo of company
-          </Heading>
+          </Heading> */}
         </Link>
         <Spacer />
         <HStack>
@@ -99,6 +104,8 @@ const Navbar = () => {
         </Link>
       </HStack>
     </Flex>
+    <NavbarSmallerScreen />
+    </>
   );
 };
 
