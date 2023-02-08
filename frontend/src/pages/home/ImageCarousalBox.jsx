@@ -7,7 +7,9 @@ import {
   Heading,
   Text,
   Container,
+  Link,
 } from '@chakra-ui/react';
+import { Link as ReactLink, useNavigate } from 'react-router-dom'
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 import Slider from 'react-slick';
 import { images } from '../../images';
@@ -25,40 +27,46 @@ const settings = {
 };
 
 export default function ImageCarousalBox() {
+  const navigate=useNavigate()
   const [slider, setSlider] = React.useState(null);
   const top = useBreakpointValue({ base: '90%', md: '50%' });
   const side = useBreakpointValue({ base: '30%', md: '40px' });
   const cards = [
+    
     {
-      title: 'Mens Products',
+      title: 'Women Products',
       text:
         "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image:images.imageMan2
+      image:images.imageWoman1,
+      path:"/women"
+    },
+    {
+      title: 'Kids Products',
+      text:
+        "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+      image:images.imagekid1,
+      path:'/kids'
+    },
+    {
+      title: 'Accessories For Women',
+      text:
+        "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+      image:images.imageAccessoriesWomen1,
+      path:'/accessories'
+    },
+    {
+      title: 'Men Products',
+      text:
+        "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+      image:images.imageMan2,
+      path:"/men"
         
-    },
-    {
-      title: 'Design Projects 2',
-      text:
-        "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image:images.imageWoman1
-    },
-    {
-      title: 'Design Projects 3',
-      text:
-        "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image:images.imagekid1
-    },
-    {
-      title: 'Design Projects 4',
-      text:
-        "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image:images.imageAccessoriesWomen1
     },
   ];
 
   return (
     <Box
-    color='white'
+      color='white'
       position={'relative'}
       height={{base:'60vh',lg:'80vh'}}
       width={'full'}
@@ -102,7 +110,9 @@ export default function ImageCarousalBox() {
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {cards.map((card, index) => (
+          
           <Box
+         
             key={index}
             height={'6xl'}
             position="relative"
@@ -111,7 +121,8 @@ export default function ImageCarousalBox() {
             backgroundSize="cover"
             backgroundImage={`url(${card.image})`}>
             {/* This is the block you need to change, to customize the caption */}
-            <Container size="container.lg" height="600px" position="relative">
+            <Container border='1px solid red' size="container.lg" height="600px" position="relative">
+            <Link as={ReactLink} to={`${card.path}`}>
               <Stack
                 spacing={6}
                 w={'full'}
@@ -121,13 +132,17 @@ export default function ImageCarousalBox() {
                 transform="translate(0, -50%)">
                 <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
                   {card.title}
+                  {card.path}
                 </Heading>
                 <Text fontSize={{ base: 'md', lg: 'lg' }}>
                   {card.text}
                 </Text>
+                {/* <Button w='60' colorScheme='whiteAlpha' onClick={()=>navigate('/men')}>Shop Now</Button> */}
               </Stack>
+              </Link>
             </Container>
           </Box>
+         
         ))}
       </Slider>
     </Box>
