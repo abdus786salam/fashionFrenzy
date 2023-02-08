@@ -44,7 +44,6 @@ export default function Footer() {
             <Link href={"#"}>Track Order</Link>
             <Link href={"#"}>Returns & Exchanges</Link>
             <Link href={"#"}>Shipping</Link>
-            <Link href={"#"}>International Orders</Link>
             <Link href={"#"}>Contact Us</Link>
           </Stack>
 
@@ -53,8 +52,6 @@ export default function Footer() {
             <Text fontWeight={"600"} fontSize={"1rem"}>
               Quick Links
             </Text>
-
-            <Link href={"#"}>Find a Store </Link>
             <Link href={"#"}>Size Charts</Link>
             <Link href={"#"}>Refer a Friend</Link>
             <Link href={"#"}>Offers & Promotions</Link>
