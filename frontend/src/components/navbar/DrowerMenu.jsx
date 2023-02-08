@@ -96,7 +96,12 @@ function DrawerMenu() {
               </Link>
               </Button>
               <Button onClick={onClose}  _hover={{ bg: "none" }} variant="ghost">
-              <Link to="#">
+              <Link as={ReactLink} to="/cart">
+                <Text fontSize="md">Cart</Text>
+              </Link>
+              </Button>
+              <Button onClick={onClose}  _hover={{ bg: "none" }} variant="ghost">
+              <Link as={ReactLink} to="#">
                 <Text fontSize="md">Contact us</Text>
               </Link>
               </Button>

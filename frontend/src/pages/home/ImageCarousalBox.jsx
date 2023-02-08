@@ -30,26 +30,26 @@ export default function ImageCarousalBox() {
   const side = useBreakpointValue({ base: '30%', md: '40px' });
   const cards = [
     {
-      title: 'Mens Products',
+      title: 'Men Products',
       text:
         "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
       image:images.imageMan2
         
     },
     {
-      title: 'Design Projects 2',
+      title: 'Women Products',
       text:
         "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
       image:images.imageWoman1
     },
     {
-      title: 'Design Projects 3',
+      title: 'Kids Products',
       text:
         "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
       image:images.imagekid1
     },
     {
-      title: 'Design Projects 4',
+      title: 'Accessories For Women',
       text:
         "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
       image:images.imageAccessoriesWomen1
