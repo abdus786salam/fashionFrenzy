@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllProducts } from '../../redux/products/product.action';
 import ImageCarousalBox from './ImageCarousalBox';
 
 const HomePage = () => {
+  const dispatch = useDispatch()
+  const data=useSelector(store=>store.productReducer)
+  console.log(data)
+
+  useEffect(()=>{
+    dispatch(getAllProducts())
+  },[])
+
   return (
     <div>
       <ImageCarousalBox />
