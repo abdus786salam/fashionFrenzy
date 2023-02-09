@@ -1,4 +1,5 @@
 [
+  
   {
     "url": "https://www.jcrew.com/s7-img-facade/BF192_YD0801_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
     "title": "Smocked beach dress in linen -cotton stripe",
@@ -29,6 +30,7 @@
     "product_type": "clothing",
     "category": "women"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/BG523_PT0970_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
     "title": "Collection halter cutout dress in Ratti® Pacific paisley",
@@ -39,6 +41,7 @@
     "product_type": "clothing",
     "category": "women"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/BE394_NA6445?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
     "title": "J.Crew trail runners",
@@ -49,6 +52,7 @@
     "product_type": "clothing",
     "category": "men"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/AY197_WZ1852?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
     "title": "8\" camp short in cotton-linen",
@@ -59,144 +63,174 @@
     "product_type": "clothing",
     "category": "men"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/BE393_PP2862?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
     "title": "Nordic low-top hikers",
     "description": "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you sure-footed and bone-dry, no matter what the terrain or conditions. Crafted in a low-top silhouette, these versatile hiking shoes are made with suede and nylon uppers. We build them to perform on the trail with Vibram® Rollingait System outsoles, which are specially designed to support the natural motion of the foot. Whether you're in the woods or on city streets, these retro hikers will help you hit your stride.",
     "discount": "EXTRA 30% OFF SALE STYLES + EXTRA 15% OFF YOUR PURCHASE WITH CODE SHOPNOW",
     "price": 178,
-
+    "sub_type":"low boots",
     "product_type": "shoes",
     "category": "men"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/BE386_SP2335?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
     "title": "Camden crepe-sole slip-ons in English suede",
     "description": "Our Camden slip-ons are crafted in premium suede from C.F. Stead, a renowned British tannery that boasts well over a century of expertise. Taking cues from vintage styles, this pair can be both rugged and laid-back, and it's extra-comfortable, thanks to its soft crepe soles.",
     "discount": "EXTRA 30% OFF SALE STYLES + EXTRA 15% OFF YOUR PURCHASE WITH CODE SHOPNOW",
     "price": 228,
-
+    "sub_type":"low boots",
     "product_type": "shoes",
     "category": "men"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/AK786_BL8551?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
     "title": "Woven belt",
     "description": "Inspired by the ropes on ships, this braided belt is for the the person hoping to look like someone who knows port from starboard. This belt is great for a day at the beach, on the golf course or anywhere, really.",
     "discount": "EXTRA 30% OFF SALE STYLES + EXTRA 15% OFF YOUR PURCHASE WITH CODE SHOPNOW",
     "price": 49.5,
+    "sub_type":"belt",
     "product_type": "accessories",
     "category": "men"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/BH142_PT1752?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
     "title": "Zip pouch in printed nylon",
     "description": "Keys? Phone? Wallet? Keep them all together, as well as your sunnies and some SPF 50 on your next trip to the pool or beach with this easy-access zip pouch, crafted in the same recycled nylon as our swimsuits.",
     "discount": "EXTRA 30% OFF SALE STYLES + EXTRA 15% OFF YOUR PURCHASE WITH CODE SHOPNOW",
     "price": 39.5,
+    "sub_type":"Zip pouch",
     "product_type": "accessories",
     "category": "men"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/BH140_PT1359?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
     "title": "Five-panel cap in floral print seersucker",
     "description": "Wear this versatile cotton cap when you need some extra protection from the sun, or when you just want something to top off your look.",
     "discount": "EXTRA 30% OFF SALE STYLES + EXTRA 15% OFF YOUR PURCHASE WITH CODE SHOPNOW",
     "price": 49.5,
+    "sub_type":"cap",
     "product_type": "accessories",
     "category": "men"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/BH305_NT4619?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
     "title": "English silk seersucker tie",
     "description": "Our ties are handmade in Long Island City, New York, by skilled craftsmen who have been making ties since 1957. Every single tie is hand-stitched, which means they're more flexible and easier to tie than machine-made ties. This one is made with silk from Stephen Walters, a renowned family-owned English mill founded in 1720.",
     "discount": "EXTRA 30% OFF SALE STYLES + EXTRA 15% OFF YOUR PURCHASE WITH CODE SHOPNOW",
     "price": 59.5,
+    "sub_type":"tie",
     "product_type": "accessories",
     "category": "men"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/AX215_PP1630?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
     "title": "Critter socks",
     "description": "There's a time and a place for plain socks. This pair is for the days that call for a little something extra.",
     "discount": "BEST SELLER Critter socks Item AX215 4.8 / 5  17 REVIEWS $14.50$6.99-$12.99 or 4 payments of $1.75-$3.25 with  EXTRA 30% OFF SALE STYLES + EXTRA 15% OFF YOUR PURCHASE WITH CODE SHOPNOW",
     "price": 14.5,
+    "sub_type":"socks",
     "product_type": "accessories",
     "category": "men"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/BG280_KF4708?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
     "title": "Boys' short-sleeve Rolling Stones T-shirt",
     "description": "More graphic tees, please! Made from comfy, machine-washable cotton, our cool, colorful graphic T-shirts let them show their personality without saying a word.",
     "discount": "EXTRA 30% OFF SALE STYLES + EXTRA 15% OFF YOUR PURCHASE WITH CODE SHOPNOW",
     "price": 34.5,
+    "sub_type":"T-shirt",
     "product_type": "clothing",
     "category": "kids"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/AZ940_WY2481?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
     "title": "Boys' cozy pajama pant",
     "description": "Pj's. Jammies. Jam-jams. Sleepy suits. No matter what you call them, our supersoft and cozy pajamas feel like a dream.",
     "discount": "EXTRA 30% OFF SALE STYLES + EXTRA 15% OFF YOUR PURCHASE WITH CODE SHOPNOW",
     "price": 39.5,
+    "sub_type":"pant",
     "product_type": "clothing",
     "category": "kids"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/BC454_BL7286?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
     "title": "Kids' short in towel terry",
     "description": "Perfect for warm-weather getaways (or any day), these shorts are made from cozy terry cloth that feels like your softest beach towel. The best part? We made a matching hoodie!",
     "discount": "EXTRA 30% OFF SALE STYLES + EXTRA 15% OFF YOUR PURCHASE WITH CODE SHOPNOW",
     "price": 39.5,
+    "sub_type":"short",
     "product_type": "clothing",
     "category": "kids"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/BF676_EE0404?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
     "title": "Girls' snap-clip pack",
     "description": "Bad hair days? Never heard of 'em. Add these cute snap clips to make any do extra-cute.",
     "discount": "EXTRA 30% OFF SALE STYLES + EXTRA 15% OFF YOUR PURCHASE WITH CODE SHOPNOW",
     "price": 29.5,
+    "sub_type":"snap clip",
     "product_type": "accessories",
     "category": "kids"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/BD570_EB8633?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
     "title": "Girls' spring-forward earrings pack",
     "description": "Fun for Valentine's Day (and everyday), this sweet pack of three earring pairs includes hearts that say \"love\" and \"ya\" plus tiny beaded hoops.",
     "discount": "EXTRA 30% OFF SALE STYLES + EXTRA 15% OFF YOUR PURCHASE WITH CODE SHOPNOW",
     "price": 24.5,
+    "sub_type":" earrings",
     "product_type": "accessories",
     "category": "kids"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/BF675_EB3333?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
     "title": "Girls' claw clips",
     "description": "Bad hair days? Never heard of 'em. These fun claw clips will make any 'do extra-cute.",
     "discount": "EXTRA 30% OFF SALE STYLES + EXTRA 15% OFF YOUR PURCHASE WITH CODE SHOPNOW",
-    "price": 15.19,
+    "price": 150,
+    "sub_type":" claw clip",
     "product_type": "accessories",
     "category": "kids"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/BD014_HT1803?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "title": "Cashmere beanie",
-    "product_type": "hats",
+    "sub_type": "hats",
     "description": "This supersoft merino wool-blend beanie will give you an extra layer of defense against cool weather, while also looking good with whatever you have on.",
-    "category": "accessories"
+    "product_type": "accessories",
+    "category": "men",
+    "price": 500
   },
+  {},
   {
     "url": "https://www.jcrew.com/s7-img-facade/BN780_NA6407?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "title": "Mount Snow X J.Crew embroidered baseball cap in corduroy",
     "product_type": "hats",
     "description": "This supersoft merino wool-blend beanie will give you an extra layer of defense against cool weather, while also looking good with whatever you have on.",
-    "category": "accessories"
+    "category": "accessories",
+    "price": 300
   },
   {
     "url": "https://www.jcrew.com/s7-img-facade/BJ318_YL5622?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "title": "Cotton beanie",
     "product_type": "hats",
     "description": "This supersoft merino wool-blend beanie will give you an extra layer of defense against cool weather, while also looking good with whatever you have on.",
+    "price": 400,
     "category": "accessories"
   },
   {
@@ -204,6 +238,7 @@
     "title": "Harris Tweed® cloth baseball cap",
     "product_type": "hats",
     "description": "This supersoft merino wool-blend beanie will give you an extra layer of defense against cool weather, while also looking good with whatever you have on.",
+    "price": 320,
     "category": "accessories"
   },
   {
@@ -256,119 +291,120 @@
     "description": "This supersoft merino wool-blend beanie will give you an extra layer of defense against cool weather, while also looking good with whatever you have on."
   },
   {
-    "ugory": "accessories",
-    "title": "gloves",
-    "imgUrl": "https://www.jcrew.com/s7-img-facade/BB985_PP3778?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
-    "name": "Cashmere-lined suede gloves",
+    "category": "accessories",
+    "product_type": "gloves",
+    "price":900,
+    "url": "https://www.jcrew.com/s7-img-facade/BB985_PP3778?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
+    "title": "Cashmere-lined suede gloves",
     "description": "Our new favorite pair of winter gloves, hands down. . .We've crafted them in durable, better-with-wear suede on the outside and warm, 100 percent cashmere on the inside. The result is a style that will get you through this winter (and many more) in style."
   },
   {
-    "ugory": "accessories",
+    "category": "accessories",
     "title": "gloves",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/BB985_SP2335?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Cashmere-lined suede gloves",
     "description": "Our new favorite pair of winter gloves, hands down. . .We've crafted them in durable, better-with-wear suede on the outside and warm, 100 percent cashmere on the inside. The result is a style that will get you through this winter (and many more) in style."
   },
   {
-    "ugory": "accessories",
+    "category": "accessories",
     "title": "gloves",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/BM337_PP4244?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Lambswool gloves with striped cuffs",
     "description": "Our new favorite pair of winter gloves, hands down. . .We've crafted them in durable, better-with-wear suede on the outside and warm, 100 percent cashmere on the inside. The result is a style that will get you through this winter (and many more) in style."
   },
   {
-    "ugory": "accessories",
+    "category": "accessories",
     "title": "gloves",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/BB984_BK0001?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Cashmere-lined leather gloves",
     "description": "Our new favorite pair of winter gloves, hands down. . .We've crafted them in durable, better-with-wear suede on the outside and warm, 100 percent cashmere on the inside. The result is a style that will get you through this winter (and many more) in style."
   },
   {
-    "ugory": "accessories",
+    "category": "accessories",
     "title": "gloves",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/BM337_PP4245?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Lambswool gloves with striped cuffs",
     "description": "Our new favorite pair of winter gloves, hands down. . .We've crafted them in durable, better-with-wear suede on the outside and warm, 100 percent cashmere on the inside. The result is a style that will get you through this winter (and many more) in style."
   },
   {
-    "ugory": "accessories",
+    "category": "accessories",
     "title": "gloves",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/BM337_PP4243?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Lambswool gloves with striped cuffs",
     "description": "Our new favorite pair of winter gloves, hands down. . .We've crafted them in durable, better-with-wear suede on the outside and warm, 100 percent cashmere on the inside. The result is a style that will get you through this winter (and many more) in style."
   },
   {
-    "ugory": "accessories",
+    "category": "accessories",
     "title": "gloves",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/BM516_PP4054?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Tracksmith® X J.Crew Harrier merino wool gloves",
     "description": "Our new favorite pair of winter gloves, hands down. . .We've crafted them in durable, better-with-wear suede on the outside and warm, 100 percent cashmere on the inside. The result is a style that will get you through this winter (and many more) in style."
   },
   {
-    "ugory": "accessories",
+    "category": "accessories",
     "title": "scarves",
     "description": "A winter go-to with the world's best yarns from the Joshua Ellis mill (est. 1767), located in the home of industrialized textile production, West Yorkshire's storied Heavy Woollen District.",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/H2195_WZ2099?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Solid cashmere scarf"
   },
   {
-    "ugory": "accessories",
+    "category": "accessories",
     "title": "scarves",
     "description": "A winter go-to with the world's best yarns from the Joshua Ellis mill (est. 1767), located in the home of industrialized textile production, West Yorkshire's storied Heavy Woollen District.",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/BM633_PP3887_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Joshua Ellis for J.Crew cashmere scarf in tartan"
   },
   {
-    "ugory": "accessories",
+    "category": "accessories",
     "title": "scarves",
     "description": "A winter go-to with the world's best yarns from the Joshua Ellis mill (est. 1767), located in the home of industrialized textile production, West Yorkshire's storied Heavy Woollen District.",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/H2195_EG5284_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Solid cashmere scarf"
   },
   {
-    "ugory": "accessories",
+    "category": "accessories",
     "title": "scarves",
     "description": "A winter go-to with the world's best yarns from the Joshua Ellis mill (est. 1767), located in the home of industrialized textile production, West Yorkshire's storied Heavy Woollen District.",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/BL469_PP3923?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Abraham Moon for J.Crew wool scarf"
   },
   {
-    "ugory": "accessories",
+    "category": "accessories",
     "title": "scarves",
     "description": "A winter go-to with the world's best yarns from the Joshua Ellis mill (est. 1767), located in the home of industrialized textile production, West Yorkshire's storied Heavy Woollen District.",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/BL393_PP3907_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Abraham Moon & Sons for J.Crew double-faced scarf in English wool"
   },
   {
-    "ugory": "accessories",
+    "category": "accessories",
     "title": "scarves",
     "description": "A winter go-to with the world's best yarns from the Joshua Ellis mill (est. 1767), located in the home of industrialized textile production, West Yorkshire's storied Heavy Woollen District.",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/H2195_SP3321?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Solid cashmere scarf"
   },
   {
-    "ugory": "accessories",
+    "category": "accessories",
     "title": "scarves",
     "description": "A winter go-to with the world's best yarns from the Joshua Ellis mill (est. 1767), located in the home of industrialized textile production, West Yorkshire's storied Heavy Woollen District.",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/BL393_PP3906?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Abraham Moon & Sons for J.Crew double-faced scarf in English wool"
   },
   {
-    "ugory": "accessories",
+    "category": "accessories",
     "title": "scarves",
     "description": "A winter go-to with the world's best yarns from the Joshua Ellis mill (est. 1767), located in the home of industrialized textile production, West Yorkshire's storied Heavy Woollen District.",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/BM633_PP3889?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Joshua Ellis for J.Crew cashmere scarf in tartan"
   },
   {
-    "ugory": "accessories",
+    "category": "accessories",
     "title": "scarves",
     "description": "A winter go-to with the world's best yarns from the Joshua Ellis mill (est. 1767), located in the home of industrialized textile production, West Yorkshire's storied Heavy Woollen District.",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/BM633_PP3888?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Joshua Ellis for J.Crew cashmere scarf in tartan"
   },
   {
-    "ugory": "accessories",
+    "category": "accessories",
     "title": "scarves",
     "description": "A winter go-to with the world's best yarns from the Joshua Ellis mill (est. 1767), located in the home of industrialized textile production, West Yorkshire's storied Heavy Woollen District.",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/BL469_PP3924?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
@@ -1768,49 +1804,49 @@
     "category": "men"
   },
   {
-    "ugory": "men",
+    "category": "men",
     "titlerl": "https://www.jcrew.com/s7-img-facade/BB040_WZ2168_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=480&hei=480",
     "name": "Eco Nordic shirt-jacket with PrimaLoft®",
     "description": "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you frost-free on the chilliest days. Built to endure everything from flurries to blizzards, our warmest layers are designed to look sharp in all conditions, whether you're hiking a mountain or trekking closer to home. This shirt-jacket is built in high-pile fleece with a smooth mesh interior for easy layering. Earth-friendly tip: Use a microfilter bag when you wash this garment to protect the fabric and prevent microfibers from entering our waterways.",
     "product_type": "coat"
   },
   {
-    "ugory": "men",
+    "category": "men",
     "titlerl": "https://www.jcrew.com/s7-img-facade/BK570_WB2192_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=480&hei=480",
     "name": "Dock peacoat with PrimaLoft®",
     "description": "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you frost-free on the chilliest days. Built to endure everything from flurries to blizzards, our warmest layers are designed to look sharp in all conditions, whether you're hiking a mountain or trekking closer to home. This shirt-jacket is built in high-pile fleece with a smooth mesh interior for easy layering. Earth-friendly tip: Use a microfilter bag when you wash this garment to protect the fabric and prevent microfibers from entering our waterways.",
     "product_type": "coat"
   },
   {
-    "ugory": "men",
+    "category": "men",
     "titlerl": "https://www.jcrew.com/s7-img-facade/BB121_WZ0220?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=480&hei=480",
     "name": "Ludlow topcoat in wool-cashmere",
     "description": "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you frost-free on the chilliest days. Built to endure everything from flurries to blizzards, our warmest layers are designed to look sharp in all conditions, whether you're hiking a mountain or trekking closer to home. This shirt-jacket is built in high-pile fleece with a smooth mesh interior for easy layering. Earth-friendly tip: Use a microfilter bag when you wash this garment to protect the fabric and prevent microfibers from entering our waterways.",
     "product_type": "coat"
   },
   {
-    "ugory": "men",
+    "category": "men",
     "titlerl": "https://www.jcrew.com/s7-img-facade/AW294_DM4914_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=480&hei=480",
     "name": "484 Slim-fit jean in Japanese selvedge denim",
     "description": "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you frost-free on the chilliest days. Built to endure everything from flurries to blizzards, our warmest layers are designed to look sharp in all conditions, whether you're hiking a mountain or trekking closer to home. This shirt-jacket is built in high-pile fleece with a smooth mesh interior for easy layering. Earth-friendly tip: Use a microfilter bag when you wash this garment to protect the fabric and prevent microfibers from entering our waterways.",
     "product_type": "coat"
   },
   {
-    "ugory": "men",
+    "category": "men",
     "titlerl": "https://www.jcrew.com/s7-img-facade/BJ178_WZ2159_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=480&hei=480",
     "name": "Ludlow topcoat in wool blend",
     "description": "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you frost-free on the chilliest days. Built to endure everything from flurries to blizzards, our warmest layers are designed to look sharp in all conditions, whether you're hiking a mountain or trekking closer to home. This shirt-jacket is built in high-pile fleece with a smooth mesh interior for easy layering. Earth-friendly tip: Use a microfilter bag when you wash this garment to protect the fabric and prevent microfibers from entering our waterways.",
     "product_type": "coat"
   },
   {
-    "ugory": "men",
+    "category": "men",
     "titlerl": "https://www.jcrew.com/s7-img-facade/BK783_PT2329?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=480&hei=480",
     "name": "The Nordic sherpa fleece jacket in paisley",
     "description": "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you frost-free on the chilliest days. Built to endure everything from flurries to blizzards, our warmest layers are designed to look sharp in all conditions, whether you're hiking a mountain or trekking closer to home. This shirt-jacket is built in high-pile fleece with a smooth mesh interior for easy layering. Earth-friendly tip: Use a microfilter bag when you wash this garment to protect the fabric and prevent microfibers from entering our waterways.",
     "product_type": "coat"
   },
   {
-    "ugory": "men",
+    "category": "men",
     "titlerl": "https://www.jcrew.com/s7-img-facade/BB040_GR1461?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=480&hei=480",
     "name": "Eco Nordic shirt-jacket with PrimaLoft®",
     "tile__detail": "(25% Off)",
@@ -1818,21 +1854,21 @@
     "product_type": "coat"
   },
   {
-    "ugory": "men",
+    "category": "men",
     "titlerl": "https://www.jcrew.com/s7-img-facade/BK570_GY5267?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=480&hei=480",
     "name": "Dock peacoat with PrimaLoft®",
     "description": "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you frost-free on the chilliest days. Built to endure everything from flurries to blizzards, our warmest layers are designed to look sharp in all conditions, whether you're hiking a mountain or trekking closer to home. This shirt-jacket is built in high-pile fleece with a smooth mesh interior for easy layering. Earth-friendly tip: Use a microfilter bag when you wash this garment to protect the fabric and prevent microfibers from entering our waterways.",
     "product_type": "coat"
   },
   {
-    "ugory": "men",
+    "category": "men",
     "titlerl": "https://www.jcrew.com/s7-img-facade/BB956_KA7514?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=480&hei=480",
     "name": "Nordic sherpa fleece shirt-jacket",
     "description": "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you frost-free on the chilliest days. Built to endure everything from flurries to blizzards, our warmest layers are designed to look sharp in all conditions, whether you're hiking a mountain or trekking closer to home. This shirt-jacket is built in high-pile fleece with a smooth mesh interior for easy layering. Earth-friendly tip: Use a microfilter bag when you wash this garment to protect the fabric and prevent microfibers from entering our waterways.",
     "product_type": "coat"
   },
   {
-    "ugory": "men",
+    "category": "men",
     "titlerl": "https://www.jcrew.com/s7-img-facade/BB956_KA7514?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=480&hei=480",
     "name": "Nordic sherpa fleece shirt-jacket",
     "tile__detail": "(21% Off)",
@@ -1989,105 +2025,105 @@
     "category": "men"
   },
   {
-    "ugory": "kids",
+    "category": "kids",
     "title": "shorts",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/L9995_GR1398?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Boys' stretch Stanton short in chino",
     "description": "Made from a moisture-wicking stretch nylon blend, these cool and comfy shorts are perfect for the playground, the beach or even dinner with Nana. Even cooler: The environmentally friendly high-tech fabric incorporates recycled textiles and is made at Everest, a mill known for its sustainable practices."
   },
   {
-    "ugory": "kids",
+    "category": "kids",
     "title": "shorts",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/L9996_BL1401?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Boys' dock short in midweight stretch chino",
     "description": "Made from a moisture-wicking stretch nylon blend, these cool and comfy shorts are perfect for the playground, the beach or even dinner with Nana. Even cooler: The environmentally friendly high-tech fabric incorporates recycled textiles and is made at Everest, a mill known for its sustainable practices."
   },
   {
-    "ugory": "kids",
+    "category": "kids",
     "title": "shorts",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/L9996_GR6092?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Boys' dock short in midweight stretch chino",
     "description": "Made from a moisture-wicking stretch nylon blend, these cool and comfy shorts are perfect for the playground, the beach or even dinner with Nana. Even cooler: The environmentally friendly high-tech fabric incorporates recycled textiles and is made at Everest, a mill known for its sustainable practices."
   },
   {
-    "ugory": "kids",
+    "category": "kids",
     "title": "shorts",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/BE543_BL9164?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Boys' relaxed-fit pull-on short in chino",
     "description": "Made from a moisture-wicking stretch nylon blend, these cool and comfy shorts are perfect for the playground, the beach or even dinner with Nana. Even cooler: The environmentally friendly high-tech fabric incorporates recycled textiles and is made at Everest, a mill known for its sustainable practices."
   },
   {
-    "ugory": "kids",
+    "category": "kids",
     "title": "shorts",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/BE543_GR7503?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Boys' relaxed-fit pull-on short in chino",
     "description": "Made from a moisture-wicking stretch nylon blend, these cool and comfy shorts are perfect for the playground, the beach or even dinner with Nana. Even cooler: The environmentally friendly high-tech fabric incorporates recycled textiles and is made at Everest, a mill known for its sustainable practices."
   },
   {
-    "ugory": "kids",
+    "category": "kids",
     "title": "shorts",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/L9996_NA0965?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Boys' dock short in midweight stretch chino",
     "description": "Made from a moisture-wicking stretch nylon blend, these cool and comfy shorts are perfect for the playground, the beach or even dinner with Nana. Even cooler: The environmentally friendly high-tech fabric incorporates recycled textiles and is made at Everest, a mill known for its sustainable practices."
   },
   {
-    "ugory": "kids",
+    "category": "kids",
     "title": "shorts",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/L9996_GY7317?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Boys' dock short in midweight stretch chino",
     "description": "Made from a moisture-wicking stretch nylon blend, these cool and comfy shorts are perfect for the playground, the beach or even dinner with Nana. Even cooler: The environmentally friendly high-tech fabric incorporates recycled textiles and is made at Everest, a mill known for its sustainable practices."
   },
   {
-    "ugory": "kids",
+    "category": "kids",
     "title": "shorts",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/L9996_BL7493?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Boys' dock short in midweight stretch chino",
     "description": "Made from a moisture-wicking stretch nylon blend, these cool and comfy shorts are perfect for the playground, the beach or even dinner with Nana. Even cooler: The environmentally friendly high-tech fabric incorporates recycled textiles and is made at Everest, a mill known for its sustainable practices."
   },
   {
-    "ugory": "kids",
+    "category": "kids",
     "title": "shorts",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/L9996_BL7220?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Boys' dock short in midweight stretch chino",
     "description": "Made from a moisture-wicking stretch nylon blend, these cool and comfy shorts are perfect for the playground, the beach or even dinner with Nana. Even cooler: The environmentally friendly high-tech fabric incorporates recycled textiles and is made at Everest, a mill known for its sustainable practices."
   },
   {
-    "ugory": "kids",
+    "category": "kids",
     "title": "shorts",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/L9996_NA6082?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Boys' dock short in midweight stretch chino",
     "description": "Made from a moisture-wicking stretch nylon blend, these cool and comfy shorts are perfect for the playground, the beach or even dinner with Nana. Even cooler: The environmentally friendly high-tech fabric incorporates recycled textiles and is made at Everest, a mill known for its sustainable practices."
   },
   {
-    "ugory": "kids",
+    "category": "kids",
     "title": "shorts",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/L9996_RD6262?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Boys' dock short in midweight stretch chino",
     "description": "Made from a moisture-wicking stretch nylon blend, these cool and comfy shorts are perfect for the playground, the beach or even dinner with Nana. Even cooler: The environmentally friendly high-tech fabric incorporates recycled textiles and is made at Everest, a mill known for its sustainable practices."
   },
   {
-    "ugory": "kids",
+    "category": "kids",
     "title": "shorts",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/L9995_NA6082?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Boys' stretch Stanton short in chino",
     "description": "Made from a moisture-wicking stretch nylon blend, these cool and comfy shorts are perfect for the playground, the beach or even dinner with Nana. Even cooler: The environmentally friendly high-tech fabric incorporates recycled textiles and is made at Everest, a mill known for its sustainable practices."
   },
   {
-    "ugory": "kids",
+    "category": "kids",
     "title": "shorts",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/L9995_NA0965?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Boys' stretch Stanton short in chino",
     "description": "Made from a moisture-wicking stretch nylon blend, these cool and comfy shorts are perfect for the playground, the beach or even dinner with Nana. Even cooler: The environmentally friendly high-tech fabric incorporates recycled textiles and is made at Everest, a mill known for its sustainable practices."
   },
   {
-    "ugory": "kids",
+    "category": "kids",
     "title": "shorts",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/L9995_BL7493?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Boys' stretch Stanton short in chino",
     "description": "Made from a moisture-wicking stretch nylon blend, these cool and comfy shorts are perfect for the playground, the beach or even dinner with Nana. Even cooler: The environmentally friendly high-tech fabric incorporates recycled textiles and is made at Everest, a mill known for its sustainable practices."
   },
   {
-    "ugory": "kids",
+    "category": "kids",
     "title": "shorts",
     "imgUrl": "https://www.jcrew.com/s7-img-facade/L9995_BL7220?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "name": "Boys' stretch Stanton short in chino",
@@ -2236,14 +2272,5 @@
     "brand": "jCrew",
     "product_type": "earrings",
     "category": "women"
-  },
-  {
-    "u": "krishan",
-    "titlerl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bikewale.com%2Ftvs-bikes%2Fntorq-125%2Fimages%2F&psig=AOvVaw1cuODbXrJFDmGUg_XTO_dW&ust=1671464429263000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCKDay63Ag_wCFQAAAAAdAAAAABAE",
-    "price": 1400,
-    "description": "yes",
-    "product_type": "denim",
-    "category": "men",
-    "__v": 0
   }
 ]
