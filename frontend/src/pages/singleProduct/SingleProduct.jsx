@@ -14,7 +14,7 @@ const product = {
     "Our new stretchy pull-on jeans are comfy like leggings (thanks to the soft, terry-like inside)",
  
   price: "1620",
-  type: "clothing",
+  product_type: "clothing",
   category: "kids",
   id: "37",
   size: ["X-Small", "Small", "Mediun", "Large", "X-Large", "XX-Large"],
@@ -26,18 +26,18 @@ const SingleProduct = () => {
 
   const location = useLocation()
 
-  // const { data } = useSelector(store =>store.AppReducer)
+  const { data } = useSelector(store =>store.productReducer)
   
   const [singleProdData, setSingleProdData] = useState(product)
   console.log(singleProdData)
 
 
-// useEffect(()=>{
-//       let singleData = data?.find((item) =>item._id===id)
-//       if(singleData){
-//         setSingleProdData(singleData)
-//       }
-// },[data])
+useEffect(()=>{
+      let singleData = data?.find((item) =>item._id===id)
+      if(singleData){
+        setSingleProdData(singleData)
+      }
+},[data])
 
   // console.log("id",id)
   const [wishList, setWishList] = useState(false);
@@ -67,8 +67,8 @@ const SingleProduct = () => {
       >
         <BreadCrumb
           home={{ name: "home", path: "/" }}
-          category={{ name: singleProdData?.category, path: "#" }}
-          subCategory={{ name: singleProdData?.type, path: "#" }}
+          category={{ name: singleProdData?.category, path: "/" }}
+          subCategory={{ name: singleProdData?.product_type, path: "/" }}
         />
         <Stack
           direction={{

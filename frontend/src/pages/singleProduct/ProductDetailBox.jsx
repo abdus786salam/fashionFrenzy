@@ -80,7 +80,7 @@ const ProductDetailBox = (props) => {
               borderColor="1px solid black"
               borderRadius="none"
               value={item}
-              onClick={({ target }) => setSize(target.value)}
+              // onClick={({ target }) => setSize(target.value)}
             >
               {item}
             </Button>

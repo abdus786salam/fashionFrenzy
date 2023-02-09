@@ -21,16 +21,16 @@ const MenPage = () => {
   const { category } =useParams()
   const [priceRange, setPriceRange] = useState([100, 1000]);
   const dispatch = useDispatch()
-  const data=useSelector(store=>store.productReducer)
+  const {data}=useSelector(store=>store.productReducer)
   console.log(data);
   useEffect(()=>{
     dispatch(getProductByCategory({category}))
-  },[])
+  },[dispatch,category])
 
   return (
     <Box>
       <Box textAlign={"center"} my={10}>
-        <Heading as="h1">Men's products Page</Heading>
+        <Heading as="h1" textTransform={'capitalize'} >{category}'s products Page</Heading>
       </Box>
       <Flex direction={"row"} mx="5">
         <VStack align="stretch" flex="0.25" p={2}>
@@ -71,15 +71,9 @@ const MenPage = () => {
             }}
             gap="1rem"
           >
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            {
+              data?.map((item)=><ProductCard key={item._id} {...item} />)
+            }
           </Box>
         </VStack>
       </Flex>

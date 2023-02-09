@@ -46,7 +46,7 @@ const Navbar = () => {
         py="3"
         px="10"
         h="60px"
-        bg="#e6b7ab"
+        bg="orange"
         position="sticky"
         top="0"
         justifyContent={"space-between"}
