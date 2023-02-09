@@ -10,13 +10,22 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import PriceRangeSlider from "../../components/PriceRangeSlider";
 import ProductCard from "../../components/productCard/ProductCard";
+import { getProductByCategory } from "../../redux/products/product.action";
 
 const MenPage = () => {
+  const { category } =useParams()
   const [priceRange, setPriceRange] = useState([100, 1000]);
-  console.log(priceRange);
+  const dispatch = useDispatch()
+  const data=useSelector(store=>store.productReducer)
+  console.log(data);
+  useEffect(()=>{
+    dispatch(getProductByCategory({category}))
+  },[])
 
   return (
     <Box>
@@ -24,7 +33,7 @@ const MenPage = () => {
         <Heading as="h1">Men's products Page</Heading>
       </Box>
       <Flex direction={"row"} mx="5">
-        <VStack align="stretch" flex="0.25" border="1px" p={2}>
+        <VStack align="stretch" flex="0.25" p={2}>
           <Text as="b">Filters</Text>
           <Divider />
           <Box>
@@ -52,7 +61,7 @@ const MenPage = () => {
             </CheckboxGroup>
           </Box>
         </VStack>
-        <VStack flex="1" border="1px solid red" p={2}>
+        <VStack flex="1" p={2}>
           <Box
             display={"grid"}
             gridTemplateColumns={{
