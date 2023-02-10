@@ -121,7 +121,7 @@ export default function ImageCarousalBox() {
             backgroundSize="cover"
             backgroundImage={`url(${card.image})`}>
             {/* This is the block you need to change, to customize the caption */}
-            <Container border='1px solid red' size="container.lg" height="600px" position="relative">
+            <Container size="container.lg" height="600px" position="relative">
             <Link as={ReactLink} to={`${card.path}`}>
               <Stack
                 spacing={6}
