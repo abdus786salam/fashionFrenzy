@@ -1,8 +1,6 @@
 .product-box .hover-btn{
 display: none;
-/* z-index: 25; */
 }
 .product-box:hover  .hover-btn{
 display: block;
-/* z-index: 25; */
 }

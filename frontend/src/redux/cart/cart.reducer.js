@@ -3,8 +3,14 @@ import * as types from "./cart.actionTypes";
 
 
 const initialState = {
-  isLoading: false,
-  isError: false,
+  isGetCartLoading: false,
+  isGetCartError: false,
+  isPostCartLoading: false,
+  isPostCartError: false,
+  isIncCartBtnLoading: false,
+  isIncCartBtnError: false,
+  isDecCartBtnLoading: false,
+  isDecCartBtnError: false,
   data:[]
  
 };
@@ -14,65 +20,80 @@ const reducer = (state = initialState, { type, payload }) => {
     case types.GET_CART_PRODUCT_REQUEST: {
       return {
         ...state,
-        isLoading: true,
+        isGetCartLoading: true,
       };
     }
     case types.GET_CART_PRODUCT_SUCCESS: {
       return {
         ...state,
-        isLoading: false,
+        isGetCartLoading: false,
         data:payload
       };
     }
     case types.GET_CART_PRODUCT_FAILURE: {
       return {
         ...state,
-        isLoading: false,
-        isError: true,
+        isGetCartLoading: false,
+        isGetCartError: true,
       };
     }
-
-    // case types.INCREASE_CART_QTY_REQUEST: {
-    //   return {
-    //     ...state,
-    //     isLoading: true,
-    //   };
-    // }
-    // case types.INCREASE_CART_QTY_SUCCESS: {
-    //   return {
-    //     ...state,
-    //     isLoading: false,
-    //     data:payload
-    //   };
-    // }
-    // case types.INCREASE_CART_QTY_FAILURE: {
-    //   return {
-    //     ...state,
-    //     isLoading: false,
-    //     isError: true,
-    //   };
-    // }
-
-    // case types.DECREASE_CART_QTY_REQUEST: {
-    //   return {
-    //     ...state,
-    //     isLoading: true,
-    //   };
-    // }
-    // case types.DECREASE_CART_QTY_SUCCESS: {
-    //   return {
-    //     ...state,
-    //     isLoading: false,
-    //     data:payload
-    //   };
-    // }
-    // case types.DECREASE_CART_QTY_FAILURE: {
-    //   return {
-    //     ...state,
-    //     isLoading: false,
-    //     isError: true,
-    //   };
-    // }
+    case types.POST_CART_PRODUCT_REQUEST: {
+      return {
+        ...state,
+        isPostCartLoading: true,
+      };
+    }
+    case types.POST_CART_PRODUCT_SUCCESS: {
+      return {
+        ...state,
+        isPostCartLoading: false
+      };
+    }
+    case types.POST_CART_PRODUCT_FAILURE: {
+      return {
+        ...state,
+        isPostCartLoading: false,
+        isPostCartError: true,
+      };
+    }
+    case types.INCREASE_CART_QTY_REQUEST: {
+      return {
+        ...state,
+        isIncCartBtnLoading: true,
+      };
+    }
+    case types.INCREASE_CART_QTY_SUCCESS: {
+      return {
+        ...state,
+        isIncCartBtnLoading: false
+      };
+    }
+    case types.INCREASE_CART_QTY_FAILURE: {
+      return {
+        ...state,
+        isIncCartBtnLoading: false,
+        isIncCartBtnError: true,
+      };
+    }
+    case types.DECREASE_CART_QTY_REQUEST: {
+      return {
+        ...state,
+        isDecCartBtnLoading: true,
+      };
+    }
+    case types.DECREASE_CART_QTY_SUCCESS: {
+      return {
+        ...state,
+        isDecCartBtnLoading: false,
+      };
+    }
+    case types.DECREASE_CART_QTY_FAILURE: {
+      return {
+        ...state,
+        isDecCartBtnLoading: false,
+        isDecCartBtnError: true,
+      };
+    }
     
     default:
       return state;
