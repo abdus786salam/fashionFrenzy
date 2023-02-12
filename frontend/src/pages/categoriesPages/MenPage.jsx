@@ -15,7 +15,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import PriceRangeSlider from "../../components/PriceRangeSlider";
 import ProductCard from "../../components/productCard/ProductCard";
-import { getAllCartData } from "../../redux/cart/cart.action";
 import { getProductByCategory } from "../../redux/products/product.action";
 
 const MenPage = () => {
@@ -23,15 +22,10 @@ const MenPage = () => {
   const [priceRange, setPriceRange] = useState([100, 1000]);
   const dispatch = useDispatch()
   const {data}=useSelector(store=>store.productReducer)
-  console.log(data);
   useEffect(()=>{
     dispatch(getProductByCategory({category}))
-    dispatch(getAllCartData())
   },[dispatch,category])
   
-  // useEffect(()=>{
-    
-  // },[])
   return (
     <Box>
       <Box textAlign={"center"} my={10}>

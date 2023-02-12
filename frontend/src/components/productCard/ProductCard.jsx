@@ -5,7 +5,6 @@ import {
   Image,
   Link,
   Text,
-  Toast,
   useToast,
   VStack,
 } from "@chakra-ui/react";
@@ -26,7 +25,7 @@ const ProductCard = ({
   product_type,
   category,
 }) => {
-  const { data, isPostCartLoading, isPostCarError } = useSelector(
+  const { isPostCartLoading, isPostCarError } = useSelector(
     (store) => store.cartReducer
   );
   const toast = useToast();
@@ -61,7 +60,6 @@ const ProductCard = ({
         </Link>
         <Button
         isLoading={isPostCartLoading}
-        alignItems='center'
           className="hover-btn"
           bg={!isAuth ? "black" : "orange"}
           border={"1px"}

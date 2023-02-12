@@ -40,23 +40,48 @@ const addToCartData = (id) => (dispatch) => {
     })
     .catch((err) => {
       dispatch({ type: types.POST_CART_PRODUCT_FAILURE });
-      console.log("action err",err.response.data.message);
+      console.log("action err", err.response.data.message);
       return err.response.data.message;
     });
 };
 
-const increaseCartQty = (data)=> (dispatch)=> {
-    dispatch({ type: types.INCREASE_CART_QTY_REQUEST });
-  return axios.patch(`${base_url}/cart/increase`, data);
+const increaseCartQty = (data) => (dispatch) => {
+  dispatch({ type: types.INCREASE_CART_QTY_REQUEST });
+  return axios.patch(`${base_url}/cart/increase`, data, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token,
+    },
+  });
 };
 
-const decreaseCartQty = (data) =>(dispatch)=> {
-    dispatch({ type: types.DECREASE_CART_QTY_REQUEST });
-  return axios.patch(`${base_url}/cart/decrease`, data);
+const decreaseCartQty = (data) => (dispatch) => {
+  dispatch({ type: types.DECREASE_CART_QTY_REQUEST });
+  return axios.patch(`${base_url}/cart/decrease`, data,{
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token,
+    },
+  });
 };
 
 const deleteCartproduct = (id) => {
-  return axios.delete(`${base_url}/cart/`, { id });
+  return axios({
+    method:"DELETE",
+    url:`${base_url}/cart/`,
+    headers: {
+      "Authorization": token,
+    },
+    data:{ id: id }
+  } )
+};
+
+const findTotalSum = (cartData = []) => {
+  const subTotalAmt = cartData?.reduce((total, item) => {
+    total += item.quantity * item.product.price;
+    return total;
+  }, 0);
+  return subTotalAmt;
 };
 
 export {
@@ -65,4 +90,5 @@ export {
   decreaseCartQty,
   deleteCartproduct,
   addToCartData,
+  findTotalSum 
 };

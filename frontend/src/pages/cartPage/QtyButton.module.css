@@ -1,0 +1,16 @@
+.qty_box{
+    display: flex;
+    justify-content: center;
+    width: 6rem;
+    margin: auto;
+    padding: 5px 10px;
+    flex-direction: row;
+    border-radius: 3px;
+    color: white;
+    background-color: orange;
+}
+
+.qty_box_button, .qty_box_item {
+    flex: 1;
+    text-align: center;
+}

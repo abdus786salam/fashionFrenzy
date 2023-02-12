@@ -7,7 +7,7 @@ const initialState = {
   isError: false,
   isAuth: !!token,
   token: token,
-  user: null,
+  user: {},
 };
 
 const reducer = (state = initialState, { type, payload }) => {

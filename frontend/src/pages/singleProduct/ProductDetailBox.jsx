@@ -17,12 +17,16 @@ import React, { useState } from "react";
 import { AiFillHeart } from "react-icons/ai";
 import { CiHeart } from "react-icons/ci";
 import { useDispatch, useSelector } from "react-redux";
+import { addToCartData } from "../../redux/cart/cart.action";
 // import StarRatingComponent from "react-star-rating-component";
 
 const ProductDetailBox = (props) => {
-  const toast = useToast()
+  const { isPostCartLoading, isPostCarError } = useSelector(
+    (store) => store.cartReducer
+  );
+  const toast = useToast();
   const dispatch = useDispatch();
-  const { user, isAuth } = useSelector((store) => store.authReducer);
+  const { isAuth } = useSelector((store) => store.authReducer);
   const [resize, setSize] = useState("");
 
   const {
@@ -34,7 +38,7 @@ const ProductDetailBox = (props) => {
     handleChangeWishList,
     wishList,
   } = props;
-  
+
   return (
     <VStack
       // border="1px solid black"
@@ -56,9 +60,9 @@ const ProductDetailBox = (props) => {
         /> */}
       </Box>
       <Stack direction={{ base: "column", md: "row" }}>
-        <Box as="s">PRICE  ₹ {+price+price*.2}</Box>
+        <Box as="s">PRICE ₹ {+price + price * 0.2}</Box>
         <Box color="red">
-        PRICE ₹ {price} ({20}% Off)
+          PRICE ₹ {price} ({20}% Off)
         </Box>
       </Stack>
       <VStack alignItems="left">
@@ -109,18 +113,20 @@ const ProductDetailBox = (props) => {
             width="200px"
             borderRadius="none"
             isDisabled={!isAuth}
-            bg={!isAuth?'black':'orange'}
+            bg={!isAuth ? "black" : "orange"}
             color="white"
-            // onClick={
-            //   () => dispatch(addToCartData(_id)).then(res =>{
-            //   toast({
-            //     title: 'This item Added to your cart.',
-            //     status: 'info',
-            //     duration: 5000,
-            //     position:"top",
-            //     isClosable: true,
-            //   })
-            // })}
+            onClick={() =>
+              dispatch(addToCartData(_id)).then((res) => {
+                console.log("res", res);
+                toast({
+                  title: res,
+                  status: "info",
+                  duration: 5000,
+                  position: "top",
+                  isClosable: true,
+                });
+              })
+            }
           >
             ADD TO CARD
           </Button>

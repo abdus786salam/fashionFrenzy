@@ -14,8 +14,6 @@ const Navbar = () => {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const { user, isAuth } = useSelector((store) => store.authReducer);
-
-  console.log(user, isAuth);
   const queryHandler = useCallback((val) => {
     setQuery(val);
   }, []);

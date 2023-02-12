@@ -5,6 +5,7 @@ import AccessoriesPage from '../pages/categoriesPages/AccessoriesPage'
 import KidsPage from '../pages/categoriesPages/KidsPage'
 import MenPage from '../pages/categoriesPages/MenPage'
 import WomenPage from '../pages/categoriesPages/WomenPage'
+import CheckoutPage from '../pages/checkoutPage/CheckoutPage'
 import HomePage from '../pages/home/HomePage'
 import LoginPage from '../pages/login-signup/LoginPage'
 import SignupPage from '../pages/login-signup/SignupPage'
@@ -19,6 +20,7 @@ const AllRoutes = () => {
         <Route path='/cart' element={<CartPage />} />
         {/* <Route path='/kids' element={<KidsPage />} /> */}
         {/* <Route path='/accessories' element={<AccessoriesPage />} /> */}
+        <Route path='/cart/checkout' element={ <CheckoutPage/>} />
         <Route path='/:category/:id' element={<SingleProduct/>}/>
         <Route path='/login' element={<LoginPage />} />
         <Route path='/signup' element={<SignupPage />} />

@@ -13,7 +13,6 @@ const getAllProducts=() =>(dispatch)=>{
 }
 
 const getProductByCategory=(params) =>(dispatch)=>{
-    console.log("parm",params)
     dispatch({type:types.GET_PRODUCT_REQUEST})
     return axios.get(`${base_url}/product`,{params}).then(res=>{
         dispatch({type:types.GET_PRODUCT_SUCCESS,payload:res.data})

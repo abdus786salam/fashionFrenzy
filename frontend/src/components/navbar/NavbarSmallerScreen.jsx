@@ -12,8 +12,6 @@ const NavbarSmallerScreen = () => {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const { user, isAuth } = useSelector((store) => store.authReducer);
-
-  console.log(user, isAuth);
   const queryHandler = useCallback((val) => {
     setQuery(val);
   }, []);
@@ -42,11 +40,11 @@ const NavbarSmallerScreen = () => {
       py="3"
       px="10"
       h="60px"
-      bg="#e6b7ab"
+      bg="orange"
       position="sticky"
       top="0"
       display={{ base: "flex", lg: "none" }}
-      justifyContent={"space-between"}
+      justifyContent={"spaceBetween"}
     >
       <Link display={{ base: "none", md: "block" }} as={ReactLink} to="/">
         <Image

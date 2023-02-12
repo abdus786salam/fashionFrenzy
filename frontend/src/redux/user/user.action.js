@@ -35,7 +35,6 @@ const getUser=()=>(dispatch)=>{
             return res
         })
         .catch(err=>{
-            console.log("err",err)
             dispatch({type:types.GET_USER_DETAILS_FAILURE})
         })
     }
