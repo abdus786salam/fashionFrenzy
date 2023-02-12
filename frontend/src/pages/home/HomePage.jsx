@@ -6,7 +6,6 @@ import ImageCarousalBox from './ImageCarousalBox';
 const HomePage = () => {
   const dispatch = useDispatch()
   const data=useSelector(store=>store.productReducer)
-  console.log(data)
 
   useEffect(()=>{
     dispatch(getAllProducts())

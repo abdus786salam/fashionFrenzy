@@ -10,7 +10,6 @@ cartRouter.get('/',authentication,async(req,res)=>{
     try {
         if(userId){
             const cartData= await  CartModel.find({user:userId}).populate(['product'])
-            console.log("get cart",cartData)
             if(cartData){
 
                 res.send(cartData) 
@@ -31,7 +30,6 @@ cartRouter.get('/',authentication,async(req,res)=>{
 cartRouter.post('/add', authentication ,async(req,res)=>{
     const payload = req.body
    const validateProduct=await  CartModel.find({user:payload.user,product:payload.product})
-   console.log("validateProduct",validateProduct)
    if(validateProduct.length>0){
     res.status(409).send({message:"This Product is already in your cart"})
    }else{
@@ -50,7 +48,6 @@ cartRouter.post('/add', authentication ,async(req,res)=>{
 
 cartRouter.patch('/increase', authentication ,async(req,res)=>{
     const {user,id,quantity=1} = req.body
-    console.log(user,quantity,id)
     const checkQty= await CartModel.findById({"_id":id},{"quantity":1,"_id":0})
     
     try {
@@ -76,7 +73,6 @@ cartRouter.patch('/increase', authentication ,async(req,res)=>{
 cartRouter.patch('/decrease', authentication ,async(req,res)=>{
     const {user,id,quantity=1} = req.body
     const checkQty= await CartModel.findById({"_id":id},{"quantity":1,"_id":0})
-    console.log(user,quantity,id)
     try {
         if(quantity&&(checkQty.quantity-quantity)<=10&&(checkQty.quantity-quantity)>0){
         if(quantity>1){

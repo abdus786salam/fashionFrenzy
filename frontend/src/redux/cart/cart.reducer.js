@@ -1,3 +1,4 @@
+import { findTotalSum } from "./cart.action";
 import * as types from "./cart.actionTypes";
 
 
@@ -11,7 +12,8 @@ const initialState = {
   isIncCartBtnError: false,
   isDecCartBtnLoading: false,
   isDecCartBtnError: false,
-  data:[]
+  data:[],
+  subTotalAmt:0
  
 };
 
@@ -27,7 +29,8 @@ const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         isGetCartLoading: false,
-        data:payload
+        data:payload,
+        subTotalAmt:findTotalSum(payload)
       };
     }
     case types.GET_CART_PRODUCT_FAILURE: {
@@ -65,7 +68,8 @@ const reducer = (state = initialState, { type, payload }) => {
     case types.INCREASE_CART_QTY_SUCCESS: {
       return {
         ...state,
-        isIncCartBtnLoading: false
+        isIncCartBtnLoading: false,
+        
       };
     }
     case types.INCREASE_CART_QTY_FAILURE: {
@@ -94,7 +98,6 @@ const reducer = (state = initialState, { type, payload }) => {
         isDecCartBtnError: true,
       };
     }
-    
     default:
       return state;
   }

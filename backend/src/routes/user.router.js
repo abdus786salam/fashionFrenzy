@@ -32,14 +32,14 @@ userRouter.post("/register", async (req, res) => {
           });
           await userData.save();
           res.send({
-            msg: "User created successfully",
+            message: "User created successfully",
           });
         }
       );
     } catch (error) {
       console.log(error);
       res.send({
-        msg: "something went wrong",
+        message: "something went wrong",
         error: error,
       });
     }
@@ -66,7 +66,7 @@ userRouter.post("/login", async (req, res) => {
     } catch (error) {
       console.log(error);
       res.send({
-        msg: "something went wrong",
+        message: "something went wrong",
         error: error,
       });
     }
@@ -89,10 +89,10 @@ userRouter.patch(
           res.send({ error });
         }
       } else {
-        res.send({ msg: "please upload image" });
+        res.send({ message: "please upload image" });
       }
     } else {
-      res.send({ msg: "you are not authorized" });
+      res.send({ message: "you are not authorized" });
     }
   }
 );
