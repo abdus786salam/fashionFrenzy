@@ -1,3 +1,4 @@
+import { findSubCategory } from "./product.action";
 import * as types from "./product.actionTypes";
 
 
@@ -5,7 +6,8 @@ import * as types from "./product.actionTypes";
 const initialState = {
   isLoading: false,
   isError: false,
-  data:[]
+  data:[],
+  subCategory:[]
  
 };
 
@@ -21,7 +23,8 @@ const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         isLoading: false,
-        data:payload
+        data:payload,
+        subCategory:findSubCategory(payload)
       };
     }
     case types.GET_PRODUCT_FAILURE: {

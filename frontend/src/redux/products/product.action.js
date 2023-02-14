@@ -21,4 +21,13 @@ const getProductByCategory=(params) =>(dispatch)=>{
     })
 }
 
-export { getAllProducts, getProductByCategory }
+
+const findSubCategory=(arr)=>{
+    const subCategory = Object.values(arr.reduce((a,{sub_type,_id})=>{
+        a[sub_type]={sub_type,_id}
+        return a;
+     },{}))
+     return subCategory
+}
+
+export { getAllProducts, getProductByCategory, findSubCategory }
