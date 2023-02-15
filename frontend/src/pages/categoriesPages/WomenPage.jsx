@@ -1,8 +1,11 @@
 import React from 'react'
+import ProductPageComponent from '../../components/productPageComponent/ProductPageComponent'
 
 const WomenPage = () => {
   return (
-    <div>WomenPage</div>
+    <>
+    <ProductPageComponent category='women' />
+    </>
   )
 }
 
