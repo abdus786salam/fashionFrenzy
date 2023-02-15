@@ -1,8 +1,11 @@
 import React from 'react'
+import ProductPageComponent from '../../components/productPageComponent/ProductPageComponent'
 
 const AccessoriesPage = () => {
   return (
-    <div>AccessoriesPage</div>
+    <>
+    <ProductPageComponent category='accessories' />
+    </>
   )
 }
 
