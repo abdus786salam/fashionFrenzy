@@ -4,8 +4,8 @@ import * as types from "./productFilter.actionTypes";
 
 
 const initialState = {
-  isLoading: false,
-  isError: false,
+  isFilterLoading: false,
+  isFilterError: false,
   subCategory:[]
  
 };

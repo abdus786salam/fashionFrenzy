@@ -5,6 +5,7 @@ import {
   Divider,
   Flex,
   Heading,
+  Spinner,
   Stack,
   Text,
   VStack,
@@ -24,8 +25,8 @@ const ProductPageComponent = ({ category = "men" }) => {
   const [priceRange, setPriceRange] = useState([0, 1000]);
   console.log(priceRange);
   const dispatch = useDispatch();
-  const { data } = useSelector((store) => store.productReducer);
-  const { subCategory } = useSelector((store) => store.filterReducer);
+  const { data, isLoading } = useSelector((store) => store.productReducer);
+  const { subCategory,isFilterLoading } = useSelector((store) => store.filterReducer);
 
   const handleFilterCategory = (e) => {
     const newFilteredProduct = [...filterProducts];
@@ -56,7 +57,10 @@ const ProductPageComponent = ({ category = "men" }) => {
   }, [filterProducts, setSearchParams, category, dispatch, priceRange]);
 
   return (
-    <Box>
+    <>
+    
+              
+            <Box>
       <Box textAlign={"center"} my={10}>
         <Heading as="h1" textTransform={"capitalize"}>
           {category}'s products Page
@@ -77,10 +81,7 @@ const ProductPageComponent = ({ category = "men" }) => {
                 Min ₹{priceRange[0]} - Max ₹{priceRange[1]}
               </Text>
             </Box>
-            <PriceRangeSlider
-              range={setPriceRange}
-            />
-            
+            <PriceRangeSlider range={setPriceRange} />
           </Box>
           <Divider />
           <Box>
@@ -89,7 +90,8 @@ const ProductPageComponent = ({ category = "men" }) => {
             </Text>
             <CheckboxGroup colorScheme="orange">
               <Stack mt={{ base: 2, md: 5 }}>
-                {subCategory?.map((item) => (
+                {
+                subCategory?.map((item) => (
                   <Checkbox
                     size={"lg"}
                     textTransform={"capitalize"}
@@ -115,13 +117,29 @@ const ProductPageComponent = ({ category = "men" }) => {
             }}
             gap="1rem"
           >
-            {data?.map((item) => (
+
+            {
+              isLoading?<Spinner 
+              thickness="4px"
+              speed="0.65s"
+              emptyColor="gray.200"
+              color="orange"
+              h='100px'
+              w='100px'
+            />:
+            data?.map((item) => (
               <ProductCard key={item._id} {...item} />
             ))}
+            
+            
           </Box>
         </VStack>
       </Flex>
     </Box>
+            
+             
+    </>
+   
   );
 };
 
