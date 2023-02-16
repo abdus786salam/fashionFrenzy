@@ -11,12 +11,13 @@ import {
   Heading,
   Text,
   Link,
+  useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { getUser, loginUser } from "../../redux/user/user.action";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Link as ReactLink } from "react-router-dom";
 import { getAllCartData } from "../../redux/cart/cart.action";
 
@@ -27,7 +28,10 @@ const initialData = {
 
 const LoginPage = () => {
   const navigate=useNavigate()
+  const location = useLocation()
+  console.log(location)
   const dispatch = useDispatch();
+  const toast = useToast()
   const [formData, setFormData] = useState(initialData);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -43,7 +47,14 @@ const LoginPage = () => {
       if(res?.data.token){
         dispatch(getUser())
         dispatch(getAllCartData())
-        alert(res.data.msg)
+        // alert()
+        toast({
+          title: res.data.msg,
+          status: "info",
+          duration: 5000,
+          position: "top",
+          isClosable: true,
+        });
         navigate('/')
       }
      

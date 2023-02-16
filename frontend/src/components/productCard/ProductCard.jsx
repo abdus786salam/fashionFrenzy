@@ -19,10 +19,8 @@ import { useEffect } from "react";
 const ProductCard = ({
   _id,
   title,
-  description,
   url,
   price,
-  product_type,
   category,
 }) => {
   const { isPostCartLoading, isPostCarError } = useSelector(
@@ -32,12 +30,6 @@ const ProductCard = ({
   const dispatch = useDispatch();
   const {  isAuth } = useSelector((store) => store.authReducer);
 
-  // const checkThisProduct = ( id) => {
-  //   const value = data?.find((ele) => ele.product._id === id);
-  //   console.log("val",value);
-  //   if (value) return true;
-  //   else return false;
-  // };
   return (
     <VStack
       key={_id}
