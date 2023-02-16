@@ -13,6 +13,7 @@ const initialState = {
   isDecCartBtnLoading: false,
   isDecCartBtnError: false,
   data:[],
+  cartLength:0,
   subTotalAmt:0
  
 };
@@ -30,6 +31,7 @@ const reducer = (state = initialState, { type, payload }) => {
         ...state,
         isGetCartLoading: false,
         data:payload,
+        cartLength:payload.length,
         subTotalAmt:findTotalSum(payload)
       };
     }
@@ -96,6 +98,12 @@ const reducer = (state = initialState, { type, payload }) => {
         ...state,
         isDecCartBtnLoading: false,
         isDecCartBtnError: true,
+      };
+    }
+    case types.REMOVE_CART_DETAILS: {
+      return {
+        ...state,
+        ...initialState
       };
     }
     default:

@@ -1,4 +1,4 @@
-import { Flex, Heading, HStack, Icon, Image, Link, Spacer } from "@chakra-ui/react";
+import { Flex, Heading, HStack, Icon, Image, Link, Spacer, Text } from "@chakra-ui/react";
 import React, { useCallback, useEffect, useState } from "react";
 import { Link as ReactLink } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
@@ -14,6 +14,7 @@ const Navbar = () => {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const { user, isAuth } = useSelector((store) => store.authReducer);
+  const { cartLength } = useSelector((store) => store.cartReducer);
   const queryHandler = useCallback((val) => {
     setQuery(val);
   }, []);
@@ -96,9 +97,12 @@ const Navbar = () => {
             </Link>
           )}
           <Link _hover={{ color: "white" }} as={ReactLink} to="/cart">
+            <HStack>
               <Icon fontSize={"xl"} as={BsCart3} />
-            <Heading as="h3" >
-            </Heading>
+            <Text >
+              ({cartLength})
+            </Text>
+            </HStack>
           </Link>
         </HStack>
       </Flex>
