@@ -40,7 +40,7 @@ const Navbar = () => {
   return (
     <>
       <Flex
-        zIndex={2}
+        zIndex={5}
         // border="1px"
         py="3"
         px="10"

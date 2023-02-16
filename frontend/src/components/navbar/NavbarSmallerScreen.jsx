@@ -36,7 +36,7 @@ const NavbarSmallerScreen = () => {
   }, [dispatch]);
   return (
     <Flex
-      zIndex={2}
+      zIndex={5}
       py="3"
       px="10"
       h="60px"

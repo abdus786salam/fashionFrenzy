@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const EmptyCart = ({display}) => {
   const navigate = useNavigate();
   return (
-    <Box display={display} textAlign="center"  py={10} px={6}>
+    <Box display={display} textAlign="center"  px={6}>
        <Icon color="orange" as={BsFillCartXFill}  boxSize={'xs'} />
       <Text fontSize="18px" mt={3} mb={2}>
         Your Cart is Empty
