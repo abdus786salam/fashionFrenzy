@@ -58,7 +58,7 @@ userRouter.post("/login", async (req, res) => {
             { user_info: matchData },
             process.env.jwtSecretKey
           );
-          res.status(200).send({ msg: "Login Sucessfully", token: token });
+          res.status(200).send({ msg: "Login Successful", token: token });
         } else {
           res.status(401).send({ msg: "Wrong password" });
         }

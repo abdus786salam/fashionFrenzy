@@ -5,12 +5,14 @@ import {
   Divider,
   Flex,
   Heading,
+  Icon,
   Spinner,
   Stack,
   Text,
   VStack,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
+import { BiFilterAlt } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import PriceRangeSlider from "../../components/PriceRangeSlider";
@@ -69,6 +71,7 @@ const ProductPageComponent = ({ category = "men" }) => {
       <Flex direction={"row"} mx="5">
         <VStack align="stretch" flex="0.25" p={2}>
           <Text fontSize={"lg"} as="b">
+          <Icon as={BiFilterAlt} mr='2' />
             Filters
           </Text>
           <Divider />
@@ -94,6 +97,7 @@ const ProductPageComponent = ({ category = "men" }) => {
                 subCategory?.map((item) => (
                   <Checkbox
                     size={"lg"}
+                    disabled={isLoading}
                     textTransform={"capitalize"}
                     key={item._id + item.sub_type}
                     value={item.sub_type}

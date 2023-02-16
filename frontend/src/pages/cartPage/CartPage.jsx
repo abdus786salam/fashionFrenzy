@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Flex,
+  useToast,
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +15,7 @@ import { getAllCartData } from '../../redux/cart/cart.action'
 import EmptyCart from "./EmptyCart";
 
 const CartPage = () => {
+  const toast=useToast()
   const dispatch=useDispatch()
   const {
     // isGetCartLoading,
@@ -28,10 +30,20 @@ const CartPage = () => {
     cartLength,
     subTotalAmt
   } = useSelector((store) => store.cartReducer);
+  const {  isAuth } = useSelector((store) => store.authReducer);
   const navigate = useNavigate();
 
 useEffect(()=>{
   dispatch(getAllCartData())
+  if(!isAuth){
+    toast({
+      title:"Please Login to see your cart items",
+      status: "info",
+      duration: 5000,
+      position: "top",
+      isClosable: true,
+    })
+  }
 },[dispatch])
 
   return (
