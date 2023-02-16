@@ -9,9 +9,11 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { logOut } from "../../redux/user/user.action";
 
 const UserProfile = ({ name, url }) => {
+  const navigate=useNavigate()
   const dispatch = useDispatch();
 
   return (
@@ -30,7 +32,11 @@ const UserProfile = ({ name, url }) => {
           <MenuItem>FAQ</MenuItem>
         </MenuGroup>
         <MenuDivider />
-        <MenuItem as="button" onClick={() => dispatch(logOut())}>
+        <MenuItem as="button" onClick={() => {
+          dispatch(logOut())
+          dispatch({type:"REMOVE_CART_DETAILS"})
+          navigate('/')
+          }}>
           Sign Out
         </MenuItem>
       </MenuList>

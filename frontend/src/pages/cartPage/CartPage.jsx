@@ -1,13 +1,7 @@
 import {
   Box,
   Button,
-  Divider,
   Flex,
-  Heading,
-  HStack,
-  Spacer,
-  Text,
-  VStack,
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -17,28 +11,31 @@ import CartItem from "./CartItem";
 import OrderSummery from "./OrderSummery";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCartData } from '../../redux/cart/cart.action'
+import EmptyCart from "./EmptyCart";
 
 const CartPage = () => {
   const dispatch=useDispatch()
   const {
-    isGetCartLoading,
-    isGetCartError,
-    isPostCartLoading,
-    isPostCartError,
-    isIncCartBtnLoading,
-    isIncCartBtnError,
-    isDecCartBtnLoading,
-    isDecCartBtnError,
+    // isGetCartLoading,
+    // isGetCartError,
+    // isPostCartLoading,
+    // isPostCartError,
+    // isIncCartBtnLoading,
+    // isIncCartBtnError,
+    // isDecCartBtnLoading,
+    // isDecCartBtnError,
     data,
+    cartLength,
     subTotalAmt
   } = useSelector((store) => store.cartReducer);
   const navigate = useNavigate();
 
 useEffect(()=>{
   dispatch(getAllCartData())
-},[])
+},[dispatch])
 
   return (
+    <>
     <Flex
       flexDirection={{ base: "column", md: "row" }}
       p={{ base: "2", md: "10" }}
@@ -51,7 +48,8 @@ useEffect(()=>{
             )
         }
       </Box>
-      <Box flex="0.3">
+     
+      <Box display={subTotalAmt>0?'block':'none'} flex="0.3">
         <OrderSummery subTotalAmt={subTotalAmt} />
         <Box mt="10" px={{ md: "10" }}>
           <Button
@@ -67,6 +65,9 @@ useEffect(()=>{
         </Box>
       </Box>
     </Flex>
+    <EmptyCart display={cartLength===0?'block':'none'} />
+    </>
+    
   );
 };
 

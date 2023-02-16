@@ -1,25 +1,27 @@
-import { RangeSlider, RangeSliderFilledTrack, RangeSliderThumb, RangeSliderTrack } from '@chakra-ui/react'
-import React from 'react'
+import {
+  RangeSlider,
+  RangeSliderFilledTrack,
+  RangeSliderThumb,
+  RangeSliderTrack,
+} from "@chakra-ui/react";
+import React from "react";
 
-const PriceRangeSlider = ({range}) => {
+const PriceRangeSlider = ({ range }) => {
   return (
     <RangeSlider
-  aria-label={['min', 'max']}
-  onChangeEnd={(val)=>range(val)}
-  colorScheme='blue'
-  defaultValue={[300, 1000]}
-  min={300}
-  max={1000}
-  step={100}
+      defaultValue={[40, 700]}
+      min={0}
+      max={1500}
+      step={100}
+      onChangeEnd={(val) => range(val)}
+    >
+      <RangeSliderTrack bg="blue.100">
+        <RangeSliderFilledTrack bg="orange" />
+      </RangeSliderTrack>
+      <RangeSliderThumb bg="orange" boxSize={4} index={0} />
+      <RangeSliderThumb bg="orange" boxSize={4} index={1} />
+    </RangeSlider>
+  );
+};
 
->
-  <RangeSliderTrack>
-    <RangeSliderFilledTrack />
-  </RangeSliderTrack>
-  <RangeSliderThumb index={0} />
-  <RangeSliderThumb index={1} />
-</RangeSlider>
-  )
-}
-
-export default PriceRangeSlider
+export default PriceRangeSlider;

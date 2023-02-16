@@ -8,7 +8,7 @@ const productRouter=express.Router()
 productRouter.get('/',async(req,res)=>{
     
     const  category =req.query
-   
+   //  // $and:[{price:{$gte:category?.price[0]}},{price:{$lte:category?.price[1]}}]
     console.log(category)
     try {
         if(category){

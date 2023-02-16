@@ -18,6 +18,7 @@ import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { getUser, loginUser } from "../../redux/user/user.action";
 import { useNavigate } from "react-router-dom";
 import { Link as ReactLink } from "react-router-dom";
+import { getAllCartData } from "../../redux/cart/cart.action";
 
 const initialData = {
   email: "",
@@ -41,6 +42,7 @@ const LoginPage = () => {
       setFormData(initialData)
       if(res?.data.token){
         dispatch(getUser())
+        dispatch(getAllCartData())
         alert(res.data.msg)
         navigate('/')
       }
