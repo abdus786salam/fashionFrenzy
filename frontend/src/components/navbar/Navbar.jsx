@@ -4,7 +4,6 @@ import { Link as ReactLink } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import SearchBar from "./SearchBar";
-import countries from "./countries";
 import { getUser } from "../../redux/user/user.action";
 import UserProfile from "./UserProfile";
 import NavbarSmallerScreen from "./NavbarSmallerScreen";
@@ -12,28 +11,28 @@ import NavbarSmallerScreen from "./NavbarSmallerScreen";
 const Navbar = () => {
   const dispatch = useDispatch();
   const [query, setQuery] = useState("");
-  const [suggestions, setSuggestions] = useState([]);
+ 
   const { user, isAuth } = useSelector((store) => store.authReducer);
   const { cartLength } = useSelector((store) => store.cartReducer);
-  const queryHandler = useCallback((val) => {
-    setQuery(val);
-  }, []);
+  // const queryHandler = useCallback((val) => {
+  //   setQuery(val);
+  // }, []);
 
-  useEffect(() => {
-    if (query === "") {
-      setSuggestions([]);
-    } else {
-      let textQuery = query.trim().toLowerCase();
-      let newSuggestions = countries
-        .filter((item) => {
-          return item.country.toLocaleLowerCase().indexOf(textQuery) !== -1
-            ? true
-            : false;
-        })
-        .map((item) => item.country);
-      setSuggestions(newSuggestions);
-    }
-  }, [query]);
+  // useEffect(() => {
+  //   if (query === "") {
+  //     setSuggestions([]);
+  //   } else {
+  //     let textQuery = query.trim().toLowerCase();
+  //     let newSuggestions = countries
+  //       .filter((item) => {
+  //         return item.country.toLocaleLowerCase().indexOf(textQuery) !== -1
+  //           ? true
+  //           : false;
+  //       })
+  //       .map((item) => item.country);
+  //     setSuggestions(newSuggestions);
+  //   }
+  // }, [query]);
   useEffect(() => {
     dispatch(getUser());
   }, [dispatch]);
@@ -41,7 +40,6 @@ const Navbar = () => {
     <>
       <Flex
         zIndex={5}
-        // border="1px"
         py="3"
         px="10"
         h="60px"
@@ -85,7 +83,7 @@ const Navbar = () => {
             </Link>
           </HStack>
         </HStack>
-        <SearchBar queryHandler={queryHandler} suggestions={suggestions} />
+        <SearchBar />
         <HStack>
           {isAuth ? (
             <UserProfile name={user?.name} url={user?.avatar_url} />

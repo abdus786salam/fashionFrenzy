@@ -12,6 +12,14 @@ const getAllProducts=() =>(dispatch)=>{
     })
 }
 
+const getSearchResults=(params)=>{
+    return axios.post(`${base_url}/product/search`,null,{params}).then(res=>{
+       return res
+    }).catch(err=>{
+       console.log(err)
+    })
+}
+
 const getProductByCategory=(params) =>(dispatch)=>{
     dispatch({type:types.GET_PRODUCT_REQUEST})
     return axios.get(`${base_url}/product`,{params}).then(res=>{
@@ -30,4 +38,4 @@ const findSubCategory=(arr)=>{
      return subCategory
 }
 
-export { getAllProducts, getProductByCategory, findSubCategory }
+export { getAllProducts, getProductByCategory, findSubCategory,getSearchResults }
