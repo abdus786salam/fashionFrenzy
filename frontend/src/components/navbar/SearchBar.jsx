@@ -5,8 +5,10 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import styled from 'styled-components'
 import { useThrottle } from 'use-throttle'
+import { getSearchResults } from '../../redux/products/product.action'
 
-const SearchBar = ({ queryHandler, suggestions }) => {
+const SearchBar = () => {
+    const [suggestions, setSuggestions] = useState([]);
     const [input, setInput] = useState("")
     const [activeOption, setActiveOption] = useState(0)
     const scrollDiv = useRef()
@@ -40,11 +42,16 @@ const SearchBar = ({ queryHandler, suggestions }) => {
 
     }
 
-   const throttleText = useThrottle(input,1000)
+   const throttleText = useThrottle(input,2000)
     useEffect(() => {
-        queryHandler(throttleText)
-    }, [throttleText, queryHandler])
-    console.log(throttleText)
+        if(throttleText){
+            getSearchResults({q:throttleText}).then(res=>{
+                console.log(res.data)
+                setSuggestions(res.data)
+            })
+        }
+    }, [throttleText])
+    console.log("trottle",throttleText)
     return (
         <Wrapper onKeyUp={handleActiveSuggestion}>
             <SearchBarWrapper>
@@ -57,8 +64,8 @@ const SearchBar = ({ queryHandler, suggestions }) => {
                 ref={scrollDiv}
             >
                 {
-                    suggestions.map((item, index) => {
-                        return <div key={index} onMouseOver={() => setActiveOption(index + 1)}>{item}</div>
+                    suggestions?.map((item, index) => {
+                        return <div key={index} onMouseOver={() => setActiveOption(index + 1)}>{item.title}</div>
                     })
                 }
             </SuggestionBox>

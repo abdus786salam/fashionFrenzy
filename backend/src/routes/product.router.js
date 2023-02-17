@@ -58,6 +58,19 @@ productRouter.post('/upload', [imageUrlConverter,authentication] ,async(req,res)
     }
 
 })
+productRouter.post('/search', async(req,res)=>{
+    const queryObj = req.query.q
+    console.log("query",queryObj)
+    try {
+        const product=await ProductModel.find({sub_type:{$regex:queryObj,$options: "i"}})
+        
+        res.status(201).send(product)
+    } catch (err) {
+        console.log(err)
+        res.status(400).send({err})
+    }
+
+})
 
 productRouter.patch('/update', [imageUrlConverter,authentication] ,async(req,res)=>{
     const payload = req.body
