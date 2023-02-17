@@ -1,30 +1,36 @@
 import React, { useEffect, useState } from "react";
-import { Box, Center, Stack, VStack } from "@chakra-ui/react";
+import { Box, Spinner, Stack, VStack } from "@chakra-ui/react";
 import BreadCrumb from "./BreadCrumb";
 import ProductImageBox from "./ProductImageBox";
 import ProductDetailBox from "./ProductDetailBox";
-import {  useLocation, useParams } from "react-router-dom";
-import { useSelector } from "react-redux"
+import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux"
+import { getProductByCategory } from "../../redux/products/product.action";
 
 
 
 const SingleProduct = () => {
 
-  const { id } = useParams();
-
-  const location = useLocation()
-
-  const { data } = useSelector(store =>store.productReducer)
-  
+  const { id,category } = useParams();
+const dispatch=useDispatch()
   const [singleProdData, setSingleProdData] = useState({})
+  const [loading, setLoading]=useState(false)
 
 
 useEffect(()=>{
-      let singleData = data?.find((item) =>item._id===id)
-      if(singleData){
-        setSingleProdData(singleData)
+      setLoading(true)
+     dispatch(getProductByCategory({_id:id})).then(res=>{
+      setLoading(false)
+      if(res.status===200){
+
+        setSingleProdData(res.data[0])
       }
-},[data])
+     }).catch(err=>{
+      setLoading(false)
+      console.log(err);
+     })
+      
+},[id,dispatch])
   const [wishList, setWishList] = useState(false);
 
   const handleChangeWishList = () => {
@@ -49,9 +55,19 @@ useEffect(()=>{
         lg: "12",
       }}
       >
+       { loading?<Spinner 
+              thickness="4px"
+              speed="0.65s"
+              emptyColor="gray.200"
+              color="orange"
+              h='100px'
+              w='100px'
+            />:
+           <>
+           
         <BreadCrumb
           home={{ name: "home", path: "/" }}
-          category={{ name: singleProdData?.category, path: "/" }}
+          category={{ name: singleProdData?.category, path: "/"+category }}
           subCategory={{ name: singleProdData?.product_type, path: "/" }}
         />
         <Stack
@@ -78,6 +94,8 @@ useEffect(()=>{
             wishList={wishList}
           />
         </Stack>
+           </> 
+            }
       </VStack>
     </Box>
   );

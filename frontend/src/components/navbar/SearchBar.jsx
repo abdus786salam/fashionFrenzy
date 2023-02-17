@@ -1,8 +1,10 @@
 import { Search2Icon } from '@chakra-ui/icons'
+import { useOutsideClick } from '@chakra-ui/react'
 import React from 'react'
 import { useRef } from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useThrottle } from 'use-throttle'
 import { getSearchResults } from '../../redux/products/product.action'
@@ -12,6 +14,7 @@ const SearchBar = () => {
     const [input, setInput] = useState("")
     const [activeOption, setActiveOption] = useState(0)
     const scrollDiv = useRef()
+    
 
     const handleActiveSuggestion = (e) => {
         switch (e.keyCode) {
@@ -42,13 +45,15 @@ const SearchBar = () => {
 
     }
 
-   const throttleText = useThrottle(input,2000)
+   const throttleText = useThrottle(input,1000)
     useEffect(() => {
         if(throttleText){
             getSearchResults({q:throttleText}).then(res=>{
                 console.log(res.data)
                 setSuggestions(res.data)
             })
+        }else{
+            setSuggestions([])
         }
     }, [throttleText])
     console.log("trottle",throttleText)
@@ -65,7 +70,11 @@ const SearchBar = () => {
             >
                 {
                     suggestions?.map((item, index) => {
-                        return <div key={index} onMouseOver={() => setActiveOption(index + 1)}>{item.title}</div>
+                        return <div key={index} onMouseOver={() => setActiveOption(index + 1)}>
+                            <Link to={`/${item.category}/${item._id}`}>
+                            {item.title}
+                            </Link>
+                            </div>
                     })
                 }
             </SuggestionBox>
