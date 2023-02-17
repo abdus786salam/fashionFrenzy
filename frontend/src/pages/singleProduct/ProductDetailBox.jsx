@@ -21,9 +21,6 @@ import { addToCartData } from "../../redux/cart/cart.action";
 // import StarRatingComponent from "react-star-rating-component";
 
 const ProductDetailBox = (props) => {
-  const { isPostCartLoading, isPostCarError } = useSelector(
-    (store) => store.cartReducer
-  );
   const toast = useToast();
   const dispatch = useDispatch();
   const { isAuth } = useSelector((store) => store.authReducer);

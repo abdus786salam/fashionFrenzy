@@ -60,7 +60,6 @@ productRouter.post('/upload', [imageUrlConverter,authentication] ,async(req,res)
 })
 productRouter.post('/search', async(req,res)=>{
     const queryObj = req.query.q
-    console.log("query",queryObj)
     try {
         const product=await ProductModel.find({sub_type:{$regex:queryObj,$options: "i"}})
         

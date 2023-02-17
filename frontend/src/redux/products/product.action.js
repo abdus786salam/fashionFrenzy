@@ -16,7 +16,7 @@ const getSearchResults=(params)=>{
     return axios.post(`${base_url}/product/search`,null,{params}).then(res=>{
        return res
     }).catch(err=>{
-       console.log(err)
+       return err
     })
 }
 
@@ -24,8 +24,10 @@ const getProductByCategory=(params) =>(dispatch)=>{
     dispatch({type:types.GET_PRODUCT_REQUEST})
     return axios.get(`${base_url}/product`,{params}).then(res=>{
         dispatch({type:types.GET_PRODUCT_SUCCESS,payload:res.data})
+        return res
     }).catch(err=>{
         dispatch({type:types.GET_PRODUCT_FAILURE})
+        return err
     })
 }
 
