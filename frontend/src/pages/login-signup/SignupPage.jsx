@@ -41,11 +41,9 @@ const SignupPage = () => {
     e.preventDefault();
     dispatch(postUserData(formData)).then(res=>{
       setFormData(initialData)
-      alert(res.data.msg)
       navigate('/login')
      
     }).catch(err=>{
-      alert(err)
       console.log(err)
     });
   };

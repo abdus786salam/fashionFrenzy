@@ -4,7 +4,6 @@ import * as types from './user.actionTypes'
 const postUserData=(data)=>(dispatch)=>{
     dispatch({type:types.USER_SIGNUP_REQUEST})
     return axios.post(`${base_url}/user/register`,data).then(res=>{
-       alert(res.data.msg,res.data.status)
         dispatch({type:types.USER_SIGNUP_SUCCESS})
     })
     .catch(err=>{
