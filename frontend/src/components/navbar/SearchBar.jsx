@@ -1,5 +1,5 @@
 import { Search2Icon } from '@chakra-ui/icons'
-import { useOutsideClick } from '@chakra-ui/react'
+import { useDisclosure, useOutsideClick } from '@chakra-ui/react'
 import React from 'react'
 import { useRef } from 'react'
 import { useEffect } from 'react'
@@ -14,6 +14,12 @@ const SearchBar = () => {
     const [input, setInput] = useState("")
     const [activeOption, setActiveOption] = useState(0)
     const scrollDiv = useRef()
+    const ref = useRef()
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    useOutsideClick({
+      ref: ref,
+      handler: () => setIsModalOpen(false),
+    })
     
 
     const handleActiveSuggestion = (e) => {
@@ -47,30 +53,41 @@ const SearchBar = () => {
 
    const throttleText = useThrottle(input,1000)
     useEffect(() => {
-        if(throttleText){
+        if(throttleText.length>0){
             getSearchResults({q:throttleText}).then(res=>{
-                console.log(res.data)
                 setSuggestions(res.data)
             })
         }else{
             setSuggestions([])
         }
     }, [throttleText])
-    console.log("trottle",throttleText)
+
+    const handelInputChange=(e)=>{
+        setInput(e.target.value)
+        if( input.length>0){
+            setIsModalOpen(true)
+        }
+                    
+    }
+    const handleRedirectLink=()=>{
+        setIsModalOpen(false)
+        console.log(suggestions[0])
+        setInput(suggestions[0]?.sub_type||"")
+    }
     return (
-        <Wrapper onKeyUp={handleActiveSuggestion}>
+        <Wrapper ref={ref} onKeyUp={handleActiveSuggestion}>
             <SearchBarWrapper>
             <Search2Icon color='gray' mt='1' mr='2' />
-                <Input value={input} placeholder='Search for products, brands and more' onChange={(e) => setInput(e.target.value)} />
+                <Input value={input} placeholder='Search for products, brands and more' onChange={ handelInputChange } />
             </SearchBarWrapper>
-            <SuggestionBox limit={5}
+            {isModalOpen&& <SuggestionBox limit={5}
                 suggestionLength={suggestions.length}
                 active={activeOption}
                 ref={scrollDiv}
             >
                 {
                     suggestions?.map((item, index) => {
-                        return <div key={index} onMouseOver={() => setActiveOption(index + 1)}>
+                        return <div onClick={ handleRedirectLink}  key={index} onMouseOver={() => setActiveOption(index + 1)}>
                             <Link to={`/${item.category}/${item._id}`}>
                             {item.title}
                             </Link>
@@ -78,6 +95,7 @@ const SearchBar = () => {
                     })
                 }
             </SuggestionBox>
+            }
         </Wrapper>
     )
 }
