@@ -25,7 +25,7 @@ app.use("/user", userRouter);
 app.use('/product',productRouter)
 app.use('/cart',cartRouter)
 app.get("/", (req, res) => {
-  res.send({ msg: "default route" });
+  res.send({ message: "default route" });
 });
 
 app.listen(process.env.PORT, async () => {
@@ -34,7 +34,7 @@ app.listen(process.env.PORT, async () => {
     console.log("connected to db");
   } catch (error) {
     console.log(error);
-    res.sen({ msg: "error while connecting to db" });
+    res.sen({ message: "error while connecting to db" });
   }
   console.log(`running at http://localhost:${process.env.PORT}`);
 });

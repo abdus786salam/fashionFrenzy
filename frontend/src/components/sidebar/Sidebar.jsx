@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
   return (
-    <Box border="1px solid red" w="20%">
+    <Box w="20%">
           <Accordion defaultIndex={[0]} allowMultiple>
             <AccordionItem>
               <h2>
@@ -18,7 +18,6 @@ const Sidebar = () => {
               <AccordionPanel px="0">
                 <Link
                   to="dashboard/products"
-                  justifyContent="flex-start"
                   w="full"  
                   bg="none"
                 >
@@ -28,7 +27,6 @@ const Sidebar = () => {
                 </Link>
                 <Link
                   to="dashboard/products/add"
-                  justifyContent="flex-start"
                   w="full"
                   bg="none"
                 >
@@ -38,7 +36,6 @@ const Sidebar = () => {
                 </Link>
                 <Link
                   to="dashboard/users"
-                  justifyContent="flex-start"
                   w="full"
                   bg="none"
                 >
@@ -61,7 +58,15 @@ const Sidebar = () => {
               <AccordionPanel px="0">
                 <Link
                   to="dashboard/users"
-                  justifyContent="flex-start"
+                  w="full"
+                  bg="none"
+                >
+                  <Text _hover={{ bg: "blackAlpha.50" }} pl="5" pt="2" h="10">
+                    All Users
+                  </Text>
+                </Link>
+                <Link
+                  to="dashboard/users"
                   w="full"
                   bg="none"
                 >
@@ -71,17 +76,6 @@ const Sidebar = () => {
                 </Link>
                 <Link
                   to="dashboard/users"
-                  justifyContent="flex-start"
-                  w="full"
-                  bg="none"
-                >
-                  <Text _hover={{ bg: "blackAlpha.50" }} pl="5" pt="2" h="10">
-                    user
-                  </Text>
-                </Link>
-                <Link
-                  to="dashboard/users"
-                  justifyContent="flex-start"
                   w="full"
                   bg="none"
                 >

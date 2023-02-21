@@ -1,8 +1,20 @@
-import { Box, Flex, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux'
 import Sidebar from "../../components/sidebar/Sidebar";
+import { getAllProductsForAdmin, getAllusers } from "../../redux/admin/admin.action";
+
+
 
 const DashBoard = () => {
+  const dispatch=useDispatch()
+  const {users,products,orders}=useSelector(store=>store.adminReducer)
+  console.log(users,products,orders)
+  useEffect(()=>{
+    dispatch(getAllusers())
+    dispatch(getAllProductsForAdmin());
+  },[])
   return (
     <Box>
       {/* dashboard navbar */}
@@ -16,12 +28,11 @@ const DashBoard = () => {
         top="0"
         justifyContent={"space-between"}
         display={{ base: "none", lg: "flex" }}
-        border="1px"
       ></Flex>
       {/* dashboard body */}
       <Flex px={{base:1,md:5}}>
         <Sidebar />
-        <Box border="1px solid blue" w="80%" px="5" py="3">
+        <Box w="80%" px="5" py="3">
           <Heading as="h3" fontSize={"md"} textTransform="uppercase">
             DashBoard
           </Heading>
@@ -35,7 +46,7 @@ const DashBoard = () => {
                  Customers
               </Heading>
               <Text fontSize={"4xl"} fontWeight={800}>
-                79
+                {users.length}
               </Text>
             </Box>
             <Box shadow="md" borderWidth="1px" flex="1" p="5"  bg='blackAlpha.50'>
@@ -43,15 +54,15 @@ const DashBoard = () => {
                  Orders
               </Heading>
               <Text fontSize={"4xl"} fontWeight={800}>
-                79
+               {orders.length}
               </Text>
             </Box>
             <Box shadow="md" borderWidth="1px" flex="1" p="5"  bg='blackAlpha.50'>
               <Heading as="h3" fontSize={"md"} color='gray.500'>
-                 Sellers
+               Total Products
               </Heading>
               <Text fontSize={"4xl"} fontWeight={800}>
-                79
+                {products.length}
               </Text>
             </Box>
             <Box shadow="md" borderWidth="1px" flex="1" p="5"  bg='blackAlpha.50'>
@@ -59,7 +70,7 @@ const DashBoard = () => {
                Revenue
               </Heading>
               <Text fontSize={"4xl"} fontWeight={800}>
-                79
+              ₹ 79
               </Text>
             </Box>
           </SimpleGrid>

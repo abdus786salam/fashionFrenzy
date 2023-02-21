@@ -51,7 +51,7 @@ productRouter.post('/upload', [imageUrlConverter,authentication] ,async(req,res)
     try {
         const product=new ProductModel(payload)
         await product.save()
-        res.status(201).send({msg:"Product uploaded"})
+        res.status(201).send({message:"Product uploaded"})
     } catch (err) {
         console.log(err)
         res.status(401).send({err})
@@ -76,7 +76,7 @@ productRouter.patch('/update', [imageUrlConverter,authentication] ,async(req,res
     try {
         const product=new ProductModel(payload)
         await product.save()
-        res.status(201).send({msg:"Product uploaded"})
+        res.status(201).send({message:"Product uploaded"})
     } catch (err) {
         console.log(err)
         res.status(401).send({err})

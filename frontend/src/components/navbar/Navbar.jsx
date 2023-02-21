@@ -46,7 +46,7 @@ const Navbar = () => {
         bg="orange"
         position="sticky"
         top="0"
-        justifyContent={"space-between"}
+        justifyContent={"spaceBetween"}
         display={{ base: "none", lg: "flex" }}
       >
         <HStack>
