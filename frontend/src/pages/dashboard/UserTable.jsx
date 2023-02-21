@@ -1,10 +1,9 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import React, { useEffect } from "react";
-import "react-data-grid/lib/styles.css";
-import DataGrid from "react-data-grid";
 import Sidebar from "../../components/sidebar/Sidebar";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllusers } from "../../redux/admin/admin.action";
+import TableTemplate from "./TableTemplate";
 
 const UserTable = () => {
   const dispatch = useDispatch();
@@ -14,14 +13,35 @@ const UserTable = () => {
     dispatch(getAllusers());
   }, []);
 
-  const columns = [
-    { key: "_id", name: "ID" },
-    { key: "avatar_url", name: "Avatar" },
-    { key: "name", name: "Name" },
-    { key: "email", name: "Email" },
-    { key: "mobile", name: "Contect Number" },
-    { key: "user_type", name: "User Type" },
-  ];
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: "ID",
+        accessor: "_id",
+      },
+      {
+        Header: "Name",
+        accessor: "name",
+      },
+      {
+        Header: "Email",
+        accessor: "email",
+      },
+      {
+        Header: "Contect No.",
+        accessor: "mobile",
+      },
+      {
+        Header: "Image",
+        accessor: "avatar_url",
+      },
+      {
+        Header: "User Type",
+        accessor: "user_type",
+      },
+    ],
+    []
+  );
 
   return (
     <Box>
@@ -42,7 +62,8 @@ const UserTable = () => {
           <Heading as="h3" fontSize="lg">
             User Details
           </Heading>
-          <DataGrid columns={columns} rows={users} />
+          {/* <DataGrid columns={columns} rows={users} /> */}
+          <TableTemplate columns={columns} data={users} />
         </Box>
       </Flex>
     </Box>

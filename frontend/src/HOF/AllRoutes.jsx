@@ -21,7 +21,7 @@ const AllRoutes = () => {
   console.log(user)
   return (
     <Routes>
-        <Route path='/' element={user.user_type==='admin'?<DashBoard/>:<HomePage />} />
+        <Route path='/' element={user?.user_type==='admin'?<DashBoard/>:<HomePage />} />
         <Route path='/users' element={<UserTable />} />
         <Route path='/products' element={<ProductTable />} />
         <Route path='/men' element={<MenPage />} />
