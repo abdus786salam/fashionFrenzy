@@ -1,10 +1,9 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import React, { useEffect } from "react";
-import "react-data-grid/lib/styles.css";
-import DataGrid from "react-data-grid";
 import Sidebar from "../../components/sidebar/Sidebar";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProductsForAdmin } from "../../redux/admin/admin.action";
+import TableTemplate from "./TableTemplate";
 
 const ProductTable = () => {
   const dispatch = useDispatch();
@@ -13,16 +12,44 @@ const ProductTable = () => {
     dispatch(getAllProductsForAdmin());
   }, []);
 
-  const columns = [
-    { key: "_id", name: "ID" },
-    { key: "url", name: "Image" },
-    { key: "title", name: "Name" },
-    { key: "price", name: "Price (₹)" },
-    { key: "description", name: "Description" },
-    { key: "sub_type", name: "Product Sub Type" },
-    { key: "category", name: " Product Category" },
-    { key: "seller", name: "Seller ID" },
-  ];
+ 
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: "ID",
+        accessor: "_id",
+      },
+      {
+        Header: "Title",
+        accessor: "title",
+      },
+      {
+        Header: "Price (₹)",
+        accessor: "price",
+      },
+      {
+        Header: "Description",
+        accessor: "description",
+      },
+      {
+        Header: "Product Sub Type",
+        accessor: "sub_type",
+      },
+      {
+        Header: "Image",
+        accessor: "url",
+      },
+      {
+        Header: "Product Category",
+        accessor: "category",
+      },
+      {
+        Header: "Seller ID",
+        accessor: "seller",
+      },
+    ],
+    []
+  );
 
   return (
     <Box>
@@ -39,11 +66,12 @@ const ProductTable = () => {
       ></Flex>
       <Flex px={{ base: 1, md: 5 }}>
         <Sidebar />
-        <Box w="80%" px="5" py="3">
+        <Box w="80%" px="5" py="3" overflowX={'scroll'}>
           <Heading as="h3" fontSize="lg">
             User Details
           </Heading>
-          <DataGrid columns={columns} rows={products} />
+          {/* <DataGrid columns={columns} rows={products} /> */}
+          <TableTemplate columns={columns} data={products} />
         </Box>
       </Flex>
     </Box>
