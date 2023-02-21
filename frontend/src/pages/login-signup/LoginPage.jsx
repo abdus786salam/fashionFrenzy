@@ -29,7 +29,6 @@ const initialData = {
 const LoginPage = () => {
   const navigate=useNavigate()
   const location = useLocation()
-  console.log(location)
   const dispatch = useDispatch();
   const toast = useToast()
   const [formData, setFormData] = useState(initialData);

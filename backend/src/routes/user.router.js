@@ -97,20 +97,32 @@ userRouter.patch(
   }
 );
 
-userRouter.get('/details',(req,res)=>{
+userRouter.get("/details", (req, res) => {
   const token = req.headers.authorization;
   if (token) {
     const decoded = jwt.verify(token, process.env.jwtSecretKey);
     if (decoded) {
-      const user= decoded.user_info;
-    res.status(200).send(user)
+      const user = decoded.user_info;
+      res.status(200).send(user);
     } else {
       res.status(400).send("something went wrong");
     }
   } else {
     res.status(400).send("Please login First");
   }
-})
+});
+
+userRouter.get("/count", async (req, res) => {
+  try {
+    const totalUsers = await UserModel.find({
+      user_type: { $ne: "admin" },
+    });
+    res.status(200).send(totalUsers);
+  } catch (err) {
+    console.log(err);
+    res.status(400).send({ err });
+  }
+});
 
 module.exports = {
   userRouter,

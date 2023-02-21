@@ -8,6 +8,8 @@ import MenPage from '../pages/categoriesPages/MenPage'
 import WomenPage from '../pages/categoriesPages/WomenPage'
 import CheckoutPage from '../pages/checkoutPage/CheckoutPage'
 import DashBoard from '../pages/dashboard/DashBoard'
+import ProductTable from '../pages/dashboard/ProductTable'
+import UserTable from '../pages/dashboard/UserTable'
 import HomePage from '../pages/home/HomePage'
 import LoginPage from '../pages/login-signup/LoginPage'
 import SignupPage from '../pages/login-signup/SignupPage'
@@ -20,8 +22,10 @@ const AllRoutes = () => {
   return (
     <Routes>
         <Route path='/' element={user.user_type==='admin'?<DashBoard/>:<HomePage />} />
-        <Route path='/dashboard' element={<DashBoard />} />
+        <Route path='/users' element={<UserTable />} />
+        <Route path='/products' element={<ProductTable />} />
         <Route path='/men' element={<MenPage />} />
+        <Route path='/dashboard' element={<DashBoard />} />
         <Route path='/women' element={<WomenPage />} />
         <Route path='/cart' element={<CartPage />} />
         <Route path='/kids' element={<KidsPage />} />
