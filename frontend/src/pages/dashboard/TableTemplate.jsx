@@ -31,7 +31,6 @@ const Styles = styled.div`
       }
       .resizer {
         display: inline-block;
-        background: blue;
         width: 10px;
         height: 100%;
         position: absolute;

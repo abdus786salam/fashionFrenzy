@@ -18,21 +18,13 @@ const CartPage = () => {
   const toast=useToast()
   const dispatch=useDispatch()
   const {
-    // isGetCartLoading,
-    // isGetCartError,
-    // isPostCartLoading,
-    // isPostCartError,
-    // isIncCartBtnLoading,
-    // isIncCartBtnError,
-    // isDecCartBtnLoading,
-    // isDecCartBtnError,
     data,
     cartLength,
     subTotalAmt
   } = useSelector((store) => store.cartReducer);
   const {  isAuth } = useSelector((store) => store.authReducer);
   const navigate = useNavigate();
-
+console.log(data)
 useEffect(()=>{
   dispatch(getAllCartData())
   if(!isAuth){

@@ -50,7 +50,7 @@ const ProductPageComponent = ({ category = "men" }) => {
     params.category = category;
     params.sub_type = filterProducts;
     // params.price =  priceRange;
-    console.log(params);
+    console.log(data);
     setSearchParams(params);
     //   params.price={$lte:priceRange[1]}
     //   {min:,max:{$lte:priceRange[1]} }

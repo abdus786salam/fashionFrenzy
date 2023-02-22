@@ -2,10 +2,7 @@ import { Box, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
-import Sidebar from "../../components/sidebar/Sidebar";
 import { getAllProductsForAdmin, getAllusers } from "../../redux/admin/admin.action";
-
-
 
 const DashBoard = () => {
   const dispatch=useDispatch()
@@ -14,26 +11,13 @@ const DashBoard = () => {
   useEffect(()=>{
     dispatch(getAllusers())
     dispatch(getAllProductsForAdmin());
-  },[])
+  },[dispatch])
   return (
     <Box>
-      {/* dashboard navbar */}
-      <Flex
-        zIndex={5}
-        py="3"
-        px="10"
-        h="60px"
-        bg="orange"
-        position="sticky"
-        top="0"
-        justifyContent={"space-between"}
-        display={{ base: "none", lg: "flex" }}
-      ></Flex>
-      {/* dashboard body */}
-      <Flex px={{base:1,md:5}}>
-        <Sidebar />
-        <Box w="80%" px="5" py="3">
-          <Heading as="h3" fontSize={"md"} textTransform="uppercase">
+      <Flex px={{base:1,md:5}} alignItems='center'>
+       
+        <Box px="5" py="3">
+          <Heading as="h3" fontSize={"2xl"} textAlign='center' textTransform="uppercase">
             DashBoard
           </Heading>
           <SimpleGrid

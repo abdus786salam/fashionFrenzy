@@ -9,7 +9,7 @@ cartRouter.get('/',authentication,async(req,res)=>{
     userId=req.body.user
     try {
         if(userId){
-            const cartData= await  CartModel.find({user:userId}).populate(['product'])
+            const cartData= await  CartModel.find({user:userId}).populate(['product','user'])
             if(cartData){
 
                 res.send(cartData) 
