@@ -1,6 +1,6 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Box, Heading, Image } from "@chakra-ui/react";
 import React, { useEffect } from "react";
-import Sidebar from "../../components/sidebar/Sidebar";
+import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProductsForAdmin } from "../../redux/admin/admin.action";
 import TableTemplate from "./TableTemplate";
@@ -10,7 +10,7 @@ const ProductTable = () => {
   const { products } = useSelector((store) => store.adminReducer);
   useEffect(() => {
     dispatch(getAllProductsForAdmin());
-  }, []);
+  }, [dispatch]);
 
  
   const columns = React.useMemo(
@@ -37,44 +37,44 @@ const ProductTable = () => {
       },
       {
         Header: "Image",
-        accessor: "url",
+        accessor: (d) => {
+          return <Image boxSize='150' src={d.url||'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8SiTWYOrsL_Ea5ILRPJlK9bLlBUFgxvyu1TFL4F2JBQ&s'} />;
+        },
       },
       {
         Header: "Product Category",
         accessor: "category",
       },
       {
-        Header: "Seller ID",
-        accessor: "seller",
+        Header: "Seller Name",
+        accessor:(d)=>{
+          return d.seller.name
+        },
+      },
+      {
+        Header: "Registration Date",
+        accessor: (d) => {
+          return moment(d.createdAt).local().format("DD/MM/YY, hh:mm a");
+        },
+      }, 
+      {
+        Header: "Last Updated Date",
+        accessor: (d) => {
+          return moment(d.updatedAt).local().format("DD/MM/YY, hh:mm a");
+        },
       },
     ],
     []
   );
 
   return (
-    <Box>
-      <Flex
-        zIndex={5}
-        py="3"
-        px="10"
-        h="60px"
-        bg="orange"
-        position="sticky"
-        top="0"
-        justifyContent={"space-between"}
-        display={{ base: "none", lg: "flex" }}
-      ></Flex>
-      <Flex px={{ base: 1, md: 5 }}>
-        <Sidebar />
-        <Box w="80%" px="5" py="3" overflowX={'scroll'}>
-          <Heading as="h3" fontSize="lg">
-            User Details
+        <Box px="5" py="3" overflowX={'scroll'}>
+          <Heading as="h3" textAlign={'center'} fontSize="2xl">
+            Product Details
           </Heading>
-          {/* <DataGrid columns={columns} rows={products} /> */}
           <TableTemplate columns={columns} data={products} />
         </Box>
-      </Flex>
-    </Box>
+    
   );
 };
 

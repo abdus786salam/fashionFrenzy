@@ -1,6 +1,6 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Box, Heading, Image } from "@chakra-ui/react";
 import React, { useEffect } from "react";
-import Sidebar from "../../components/sidebar/Sidebar";
+import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllusers } from "../../redux/admin/admin.action";
 import TableTemplate from "./TableTemplate";
@@ -11,7 +11,7 @@ const UserTable = () => {
   console.log(users);
   useEffect(() => {
     dispatch(getAllusers());
-  }, []);
+  }, [dispatch]);
 
   const columns = React.useMemo(
     () => [
@@ -33,39 +33,37 @@ const UserTable = () => {
       },
       {
         Header: "Image",
-        accessor: "avatar_url",
+        accessor: (d) => {
+          return <Image boxSize='150' src={d.avatar_url||'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8SiTWYOrsL_Ea5ILRPJlK9bLlBUFgxvyu1TFL4F2JBQ&s'} />;
+        },
       },
       {
         Header: "User Type",
         accessor: "user_type",
+       
+      },
+      {
+        Header: "Registration Date",
+        accessor: (d) => {
+          return moment(d.createdAt).local().format("DD/MM/YY, hh:mm a");
+        },
+      }, 
+      {
+        Header: "Last Updated Date",
+        accessor: (d) => {
+          return moment(d.updatedAt).local().format("DD/MM/YY, hh:mm a");
+        },
       },
     ],
     []
   );
 
   return (
-    <Box>
-      <Flex
-        zIndex={5}
-        py="3"
-        px="10"
-        h="60px"
-        bg="orange"
-        position="sticky"
-        top="0"
-        justifyContent={"space-between"}
-        display={{ base: "none", lg: "flex" }}
-      ></Flex>
-      <Flex px={{ base: 1, md: 5 }}>
-        <Sidebar />
-        <Box w="80%" px="5" py="3">
-          <Heading as="h3" fontSize="lg">
-            User Details
-          </Heading>
-          {/* <DataGrid columns={columns} rows={users} /> */}
-          <TableTemplate columns={columns} data={users} />
-        </Box>
-      </Flex>
+    <Box px="5" py="3" overflowX={"scroll"}>
+      <Heading as="h3" textAlign={"center"} fontSize="2xl">
+        User Details
+      </Heading>
+      <TableTemplate columns={columns} data={users} />
     </Box>
   );
 };

@@ -1,5 +1,5 @@
 import { Flex, Heading, HStack, Icon, Image, Link, Spacer, Text } from "@chakra-ui/react";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link as ReactLink } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,29 +10,8 @@ import NavbarSmallerScreen from "./NavbarSmallerScreen";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const [query, setQuery] = useState("");
- 
   const { user, isAuth } = useSelector((store) => store.authReducer);
   const { cartLength } = useSelector((store) => store.cartReducer);
-  // const queryHandler = useCallback((val) => {
-  //   setQuery(val);
-  // }, []);
-
-  // useEffect(() => {
-  //   if (query === "") {
-  //     setSuggestions([]);
-  //   } else {
-  //     let textQuery = query.trim().toLowerCase();
-  //     let newSuggestions = countries
-  //       .filter((item) => {
-  //         return item.country.toLocaleLowerCase().indexOf(textQuery) !== -1
-  //           ? true
-  //           : false;
-  //       })
-  //       .map((item) => item.country);
-  //     setSuggestions(newSuggestions);
-  //   }
-  // }, [query]);
   useEffect(() => {
     dispatch(getUser());
   }, [dispatch]);

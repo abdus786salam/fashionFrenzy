@@ -1,5 +1,4 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
 import CartPage from '../pages/cartPage/CartPage'
 import AccessoriesPage from '../pages/categoriesPages/AccessoriesPage'
@@ -17,13 +16,12 @@ import PageNotFound from '../pages/pagenotfound/PageNotFound'
 import SingleProduct from '../pages/singleProduct/SingleProduct'
 
 const AllRoutes = () => {
-  const {user} = useSelector(store=>store.authReducer)
-  console.log(user)
+  
   return (
     <Routes>
-        <Route path='/' element={user?.user_type==='admin'?<DashBoard/>:<HomePage />} />
-        <Route path='/users' element={<UserTable />} />
-        <Route path='/products' element={<ProductTable />} />
+        <Route path='/' element={<HomePage />} />
+        <Route path='/dashboard/users' element={<UserTable />} />
+        <Route path='/dashboard/products' element={<ProductTable />} />
         <Route path='/men' element={<MenPage />} />
         <Route path='/dashboard' element={<DashBoard />} />
         <Route path='/women' element={<WomenPage />} />
