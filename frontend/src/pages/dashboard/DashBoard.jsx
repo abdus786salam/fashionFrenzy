@@ -7,7 +7,6 @@ import { getAllProductsForAdmin, getAllusers } from "../../redux/admin/admin.act
 const DashBoard = () => {
   const dispatch=useDispatch()
   const {users,products,orders}=useSelector(store=>store.adminReducer)
-  console.log(users,products,orders)
   useEffect(()=>{
     dispatch(getAllusers())
     dispatch(getAllProductsForAdmin());

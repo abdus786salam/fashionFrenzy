@@ -25,7 +25,6 @@ const ProductPageComponent = ({ category = "men" }) => {
   const initialCategory = searchParams.getAll("sub_type");
   const [filterProducts, setFilteredProducts] = useState(initialCategory || []);
   const [priceRange, setPriceRange] = useState([0, 1000]);
-  console.log(priceRange);
   const dispatch = useDispatch();
   const { data, isLoading } = useSelector((store) => store.productReducer);
   const { subCategory,isFilterLoading } = useSelector((store) => store.filterReducer);
@@ -50,7 +49,6 @@ const ProductPageComponent = ({ category = "men" }) => {
     params.category = category;
     params.sub_type = filterProducts;
     // params.price =  priceRange;
-    console.log(data);
     setSearchParams(params);
     //   params.price={$lte:priceRange[1]}
     //   {min:,max:{$lte:priceRange[1]} }

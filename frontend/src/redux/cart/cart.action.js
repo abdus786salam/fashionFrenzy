@@ -40,7 +40,6 @@ const addToCartData = (id) => (dispatch) => {
     })
     .catch((err) => {
       dispatch({ type: types.POST_CART_PRODUCT_FAILURE });
-      console.log("action err", err.response.data.message);
       return err.response.data.message;
     });
 };
@@ -76,6 +75,20 @@ const deleteCartproduct = (id) => {
   } )
 };
 
+const palceOrder=(payload)=>{
+ return axios.post(`${base_url}/order/`,payload,{
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token,
+    },
+  }).then(res=>{
+    localStorage.setItem('orderId',res.data.orderId)
+    console.log(res)
+  }).catch(err=>{
+    console.log(err)
+  })
+}
+
 const findTotalSum = (cartData = []) => {
   const subTotalAmt = cartData?.reduce((total, item) => {
     total += item.quantity * item.product.price;
@@ -90,5 +103,6 @@ export {
   decreaseCartQty,
   deleteCartproduct,
   addToCartData,
-  findTotalSum 
+  findTotalSum,
+  palceOrder 
 };

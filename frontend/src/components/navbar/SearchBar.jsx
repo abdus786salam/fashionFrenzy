@@ -71,7 +71,6 @@ const SearchBar = () => {
     }
     const handleRedirectLink=()=>{
         setIsModalOpen(false)
-        console.log(suggestions[0])
         setInput(suggestions[0]?.sub_type||"")
     }
     return (
