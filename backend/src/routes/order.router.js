@@ -6,12 +6,21 @@ const { OrderModel } = require('../models/order.model')
 
 const orderRouter=express.Router()
 
+orderRouter.get('/',async(req,res)=>{
+    
+        try {
+            const orders=await  OrderModel.find()
+            res.status(201).send(orders)
+        } catch (err) {
+            console.log(err)
+            res.status(401).send({err})
+        }  
+})
 orderRouter.post('/',authentication,async(req,res)=>{
     const payload = req.body
         try {
             const product=new  OrderModel(payload)
             const updatedProduct=await product.save()
-            console.log(updatedProduct)
             res.status(201).send({message:"Your order placed successfully",orderId:updatedProduct._id})
         } catch (err) {
             console.log(err)

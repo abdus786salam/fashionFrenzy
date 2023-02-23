@@ -67,9 +67,9 @@ async function displayRazorpay() {
           navigate("/");
       },
       prefill: {
-          name: details.name,
-          email: details.email,
-          contact:details.mobile,
+          name: "sudarshan",
+          email: "sudarshanpujari6@gmail.com",
+          contact: "9123456780",
       },
       notes: {
           address: "let go",

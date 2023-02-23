@@ -56,7 +56,7 @@ const increaseCartQty = (data) => (dispatch) => {
 
 const decreaseCartQty = (data) => (dispatch) => {
   dispatch({ type: types.DECREASE_CART_QTY_REQUEST });
-  return axios.patch(`${base_url}/cart/decrease`, data,{
+  return axios.patch(`${base_url}/cart/decrease`, data, {
     headers: {
       "Content-Type": "application/json",
       Authorization: token,
@@ -66,62 +66,69 @@ const decreaseCartQty = (data) => (dispatch) => {
 
 const deleteCartproduct = (id) => {
   return axios({
-    method:"DELETE",
-    url:`${base_url}/cart/`,
+    method: "DELETE",
+    url: `${base_url}/cart/`,
     headers: {
-      "Authorization": token,
+      Authorization: token,
     },
-    data:{ id: id }
-  } )
+    data: { id: id },
+  });
 };
 
 // for placing order
 
-const palceOrder=(payload)=>{
- return axios.post(`${base_url}/order/`,payload,{
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: token,
-    },
-  }).then(res=>{
-    localStorage.setItem('orderId',res.data.orderId)
-    console.log(res)
-    axios({
-      method:"DELETE",
-      url:`${base_url}/cart/`,
+const palceOrder = (payload) => {
+  return axios
+    .post(`${base_url}/order/`, payload, {
       headers: {
-        "Authorization": token,
-      }
-    } ).then(res=>{
-      console.log(res)
-    }).catch(err=>{
-      console.log(err)
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
     })
-  }).catch(err=>{
-    console.log(err)
-  })
-}
+    .then((res) => {
+      localStorage.setItem("orderId", res.data.orderId);
+      console.log(res);
+      axios({
+        method: "DELETE",
+        url: `${base_url}/cart/`,
+        headers: {
+          Authorization: token,
+        },
+      })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 // for adding delivery  address to the order
 
-const updateDeliveryAddress=(address)=>{
- return axios({
-    method:"PATCH",
-    url:`${base_url}/order/`,
+const updateDeliveryAddress = (address) => {
+  return axios({
+    method: "PATCH",
+    url: `${base_url}/order/`,
     headers: {
-      "Authorization": token,
+      Authorization: token,
     },
-    data:{
-          orderId:localStorage.getItem('orderId'),
-          delivery_address:address      
-  }
-  } ).then(res=>{
-    localStorage.removeItem('orderId')
-    console.log(res)
-  }).catch(err=>{
-    console.log(err)
+    data: {
+      orderId: localStorage.getItem("orderId"),
+      delivery_address: address,
+    },
   })
-}
+    .then((res) => {
+      localStorage.removeItem("orderId");
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 const findTotalSum = (cartData = []) => {
   const subTotalAmt = cartData?.reduce((total, item) => {
@@ -139,5 +146,5 @@ export {
   addToCartData,
   findTotalSum,
   palceOrder,
-  updateDeliveryAddress 
+  updateDeliveryAddress,
 };
