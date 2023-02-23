@@ -20,12 +20,9 @@ orderRouter.post('/',authentication,async(req,res)=>{
 })
 orderRouter.patch('/',authentication,async(req,res)=>{
     const payload = req.body
-    const orderId=await OrderModel.find({_id:payload.orderId})
-    console.log(orderId)
-        try {
-            const product=new  OrderModel(payload)
-            await product.save()
-            res.status(201).send({message:"Your order placed successfully"})
+    try {
+        await OrderModel.findByIdAndUpdate({_id:payload.orderId},{delivery_address:payload.delivery_address})
+            res.status(201).send({message:"Your shipping address added successfully"})
         } catch (err) {
             console.log(err)
             res.status(401).send({err})

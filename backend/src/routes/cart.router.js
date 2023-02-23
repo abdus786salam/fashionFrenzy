@@ -94,9 +94,15 @@ cartRouter.patch('/decrease', authentication ,async(req,res)=>{
 
 cartRouter.delete('/',authentication,async(req,res)=>{
     const {user,id} = req.body
+    
     try {
-        await CartModel.findOneAndDelete({"user":user,"_id":id})
-        res.status(200).send({message:`Cart product of id ${id} deleted successfully` })
+        if(id){
+            await CartModel.findOneAndDelete({"user":user,"_id":id})
+            res.status(200).send({message:`Cart product of id ${id} deleted successfully` })
+        }else{
+            await CartModel.deleteMany({"user":user})
+            res.status(200).send({message:`Cart products deleted successfully` })
+        }
     } catch (err) {
         console.log(err)
         res.status(400).send({err})

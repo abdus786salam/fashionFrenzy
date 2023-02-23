@@ -75,6 +75,8 @@ const deleteCartproduct = (id) => {
   } )
 };
 
+// for placing order
+
 const palceOrder=(payload)=>{
  return axios.post(`${base_url}/order/`,payload,{
     headers: {
@@ -83,6 +85,38 @@ const palceOrder=(payload)=>{
     },
   }).then(res=>{
     localStorage.setItem('orderId',res.data.orderId)
+    console.log(res)
+    axios({
+      method:"DELETE",
+      url:`${base_url}/cart/`,
+      headers: {
+        "Authorization": token,
+      }
+    } ).then(res=>{
+      console.log(res)
+    }).catch(err=>{
+      console.log(err)
+    })
+  }).catch(err=>{
+    console.log(err)
+  })
+}
+
+// for adding delivery  address to the order
+
+const updateDeliveryAddress=(address)=>{
+ return axios({
+    method:"PATCH",
+    url:`${base_url}/order/`,
+    headers: {
+      "Authorization": token,
+    },
+    data:{
+          orderId:localStorage.getItem('orderId'),
+          delivery_address:address      
+  }
+  } ).then(res=>{
+    localStorage.removeItem('orderId')
     console.log(res)
   }).catch(err=>{
     console.log(err)
@@ -104,5 +138,6 @@ export {
   deleteCartproduct,
   addToCartData,
   findTotalSum,
-  palceOrder 
+  palceOrder,
+  updateDeliveryAddress 
 };
