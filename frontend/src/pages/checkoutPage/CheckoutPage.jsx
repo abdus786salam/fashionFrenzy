@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useSelector, shallowEqual } from "react-redux";
+import { updateDeliveryAddress } from "../../redux/cart/cart.action";
 // import { shallowEqual, useDispatch, useSelector } from "react-redux";
 
 import RazorPay from '../payment/RazorPay'
@@ -28,9 +29,10 @@ const initialData = {
 };
 
 export default function CheckoutPage() {
-  // const { subTotalAmt } = useSelector((store) => {return store.CartReducer}, shallowEqual);
+  const { subTotalAmt } = useSelector((store) => store.cartReducer);
   const [deliveryData, setDeliveryData] = useState(initialData);
   const { name="", email="", mobile="" } = useSelector((store) => store.authReducer.user);
+  const totalAmount=subTotalAmt+Math.round(subTotalAmt*0.20)
 
   useEffect(() => {
     
@@ -47,8 +49,14 @@ export default function CheckoutPage() {
     setDeliveryData({ ...deliveryData, [name]: value });
   };
 
+const handleSubmit=(e)=>{
+  e.preventDefault()
+  updateDeliveryAddress(deliveryData)
+}
+
   return (
     <Flex align={"center"} justify={"center"} >
+      <form onSubmit={handleSubmit}>
       <Stack
         spacing={8}
         mx={"auto"}
@@ -135,14 +143,24 @@ export default function CheckoutPage() {
                 />
               </InputGroup>
             </FormControl>
+            {/* <Input
+                  cursor="pointer"
+                  type="submit"
+                  value="Add Delivery Address"
+                  bg="orange"
+                  color='white'
+                  mt="10"
+                  h={10}
+                /> */}
             <Stack spacing={10} pt={2}>
               <RazorPay 
-              // details={deliveryData} totalprice={subTotalAmt} 
+              details={deliveryData} totalprice={totalAmount} 
               />
             </Stack>
           </Stack>
         </Box>
       </Stack>
+      </form>
     </Flex>
   );
 }

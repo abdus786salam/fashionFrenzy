@@ -1,9 +1,9 @@
 import axios from "axios";
-import { Button ,useToast } from "@chakra-ui/react";
+import { Button ,Input,useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
 
-function RazorPay({details,totalprice=1000}) {
+function RazorPay({details,totalprice}) {
   const toast = useToast();
   const navigate = useNavigate();
   function loadScript(src) {
@@ -67,9 +67,9 @@ async function displayRazorpay() {
           navigate("/");
       },
       prefill: {
-          name: "sudarshan",
-          email: "sudarshanpujari6@gmail.com",
-          contact: "9123456780",
+          name: details.name,
+          email: details.email,
+          contact:details.mobile,
       },
       notes: {
           address: "let go",
@@ -84,18 +84,19 @@ async function displayRazorpay() {
 }
 
 return (
-         <Button display={"block"}
+         <Input display={"block"}
           borderRadius={"100px"}
           width="200px"
+          type="submit"
+          value="Checkout"
           margin="auto"
           marginTop={"20px"}
           _hover={{ bgColor: "#FFC300" }}
           color={"white"}
-          bgColor={"orange"}  onClick={displayRazorpay}
-        //   disabled={ details.name==="" ||details.address1==="" || details.pin_code==="" ||details.city==="" || details.email==="" || details.mobile===""}
-          >
-              Checkout
-          </Button>
+          bgColor={"orange"}  
+          onClick={displayRazorpay}
+          isDisabled={ details.name==="" ||details.address1==="" || details.pin_code==="" ||details.city==="" || details.email==="" || details.mobile===""}
+          />
      
   
 );
