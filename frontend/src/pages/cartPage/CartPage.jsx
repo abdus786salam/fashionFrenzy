@@ -11,7 +11,7 @@ import { FaArrowRight } from "react-icons/fa";
 import CartItem from "./CartItem";
 import OrderSummery from "./OrderSummery";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCartData } from '../../redux/cart/cart.action'
+import { getAllCartData, palceOrder } from '../../redux/cart/cart.action'
 import EmptyCart from "./EmptyCart";
 
 const CartPage = () => {
@@ -23,8 +23,8 @@ const CartPage = () => {
     subTotalAmt
   } = useSelector((store) => store.cartReducer);
   const {  isAuth } = useSelector((store) => store.authReducer);
+  const totalAmount=subTotalAmt+Math.round(subTotalAmt*0.20)
   const navigate = useNavigate();
-console.log(data)
 useEffect(()=>{
   dispatch(getAllCartData())
   if(!isAuth){
@@ -37,6 +37,17 @@ useEffect(()=>{
     })
   }
 },[dispatch])
+const cartProductsIds=data?.map(item=>item._id)
+console.log(cartProductsIds)
+const handlePlaceOrder =() =>{
+  palceOrder({cart_item:cartProductsIds,total_price:totalAmount}).then(res=>{
+    console.log(res)
+    navigate("/cart/checkout")
+  }).catch(err=>{
+    console.log(err)
+  })
+  
+}
 
   return (
     <>
@@ -59,7 +70,7 @@ useEffect(()=>{
           <Button
             w="full"
             colorScheme="blue"
-            onClick={() => navigate("/cart/checkout")}
+            onClick={handlePlaceOrder}
             size="lg"
             fontSize="md"
             rightIcon={<FaArrowRight />}

@@ -6,6 +6,7 @@ const fileupload = require("express-fileupload");
 const { userRouter } = require("./routes/user.router");
 const { productRouter } = require("./routes/product.router");
 const { cartRouter } = require("./routes/cart.router");
+const { orderRouter } = require("./routes/order.router");
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(
 app.use("/user", userRouter);
 app.use('/product',productRouter)
 app.use('/cart',cartRouter)
+app.use('/order',orderRouter)
 app.get("/", (req, res) => {
   res.send({ message: "default route" });
 });

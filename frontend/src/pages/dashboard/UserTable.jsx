@@ -8,7 +8,6 @@ import TableTemplate from "./TableTemplate";
 const UserTable = () => {
   const dispatch = useDispatch();
   const { users } = useSelector((store) => store.adminReducer);
-  console.log(users);
   useEffect(() => {
     dispatch(getAllusers());
   }, [dispatch]);
