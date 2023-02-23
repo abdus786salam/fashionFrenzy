@@ -2,7 +2,7 @@ import { Box, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllProductsForAdmin, getAllusers } from "../../redux/admin/admin.action";
+import { getAllOrdersForAdmin, getAllProductsForAdmin, getAllusers } from "../../redux/admin/admin.action";
 
 const DashBoard = () => {
   const dispatch=useDispatch()
@@ -10,6 +10,7 @@ const DashBoard = () => {
   useEffect(()=>{
     dispatch(getAllusers())
     dispatch(getAllProductsForAdmin());
+    dispatch(getAllOrdersForAdmin());
   },[dispatch])
   return (
     <Box>

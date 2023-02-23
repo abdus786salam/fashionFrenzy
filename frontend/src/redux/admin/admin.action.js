@@ -14,6 +14,11 @@ const getAllProductsForAdmin=()=>(dispatch)=>{
     dispatch({type:types.GET_PRODUCTS,payload:res.data})
   })
 }
+const getAllOrdersForAdmin=()=>(dispatch)=>{
+  axios.get(`${base_url}/order/`).then(res=>{
+    dispatch({type:types.GET_ORDERS,payload:res.data})
+  })
+}
 
-export { getAllusers, getAllProductsForAdmin }
+export { getAllusers, getAllProductsForAdmin,getAllOrdersForAdmin }
 

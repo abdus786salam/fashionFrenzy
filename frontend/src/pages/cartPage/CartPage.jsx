@@ -38,7 +38,6 @@ useEffect(()=>{
   }
 },[dispatch])
 const cartProductsIds=data?.map(item=>item._id)
-console.log(cartProductsIds)
 const handlePlaceOrder =() =>{
   palceOrder({cart_item:cartProductsIds,total_price:totalAmount}).then(res=>{
     console.log(res)
