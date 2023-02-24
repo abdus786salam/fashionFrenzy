@@ -57,7 +57,7 @@ function DrawerMenu() {
                   <Link as={ReactLink} to="/">
                     <Image
                       h="80px"
-                      src="https://user-images.githubusercontent.com/101567617/217269641-c38b6de0-1935-4530-95d5-855ebeb19c7f.png"
+                      src="https://user-images.githubusercontent.com/101567617/221098794-ec4e8ad4-3ab3-4acf-8cf6-4aee54cc9e91.png"
                     />
                   </Link>
                 </Button>

@@ -14,16 +14,17 @@ import LoginPage from '../pages/login-signup/LoginPage'
 import SignupPage from '../pages/login-signup/SignupPage'
 import PageNotFound from '../pages/pagenotfound/PageNotFound'
 import SingleProduct from '../pages/singleProduct/SingleProduct'
+import RoutesForAdminOnly from './PrivateRoutes'
 
 const AllRoutes = () => {
   
   return (
     <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/dashboard/users' element={<UserTable />} />
-        <Route path='/dashboard/products' element={<ProductTable />} />
+        <Route path='/dashboard/users' element={<RoutesForAdminOnly><UserTable /></RoutesForAdminOnly>} />
+        <Route path='/dashboard/products' element={<RoutesForAdminOnly><ProductTable /></RoutesForAdminOnly>} />
         <Route path='/men' element={<MenPage />} />
-        <Route path='/dashboard' element={<DashBoard />} />
+        <Route path='/dashboard' element={<RoutesForAdminOnly><DashBoard /></RoutesForAdminOnly>} />
         <Route path='/women' element={<WomenPage />} />
         <Route path='/cart' element={<CartPage />} />
         <Route path='/kids' element={<KidsPage />} />

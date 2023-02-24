@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   return (
     <Menu>
-      <MenuButton as={Button}>
+      <MenuButton as={Button} bg='none'>
         <HamburgerIcon />
       </MenuButton>
       <MenuList>
