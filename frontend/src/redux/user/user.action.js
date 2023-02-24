@@ -43,4 +43,8 @@ const logOut=()=>(dispatch)=> {
     dispatch({type:types.USER_LOGOUT})
 }
 
-export { postUserData, loginUser, getUser, logOut }
+const updateUserData=(data)=>{
+    return axios.patch(`${base_url}/user/update`,data)
+}
+
+export { postUserData, loginUser, getUser, logOut,updateUserData }

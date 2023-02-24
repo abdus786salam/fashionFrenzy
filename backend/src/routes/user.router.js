@@ -74,26 +74,27 @@ userRouter.post("/login", async (req, res) => {
 });
 userRouter.patch(
   "/update",
-  [imageUrlConverter, authentication],
+  // [imageUrlConverter, authentication],
   async (req, res) => {
-    if (req.body.user) {
-      if (req.body.url) {
-        try {
-          const UpdatedUserData = await UserModel.findByIdAndUpdate(
-            { _id: req.body.user._id },
-            { avatar_url: req.body.url },
-            { new: true }
-          );
-          res.send(UpdatedUserData);
-        } catch (error) {
-          res.send({ error });
-        }
-      } else {
-        res.send({ message: "please upload image" });
-      }
-    } else {
-      res.send({ message: "you are not authorized" });
+    try {
+      const UpdatedUserData = await UserModel.findByIdAndUpdate(
+        { _id: req.body._id },
+        { ...req.body },
+        { new: true }
+      );
+      res.send(UpdatedUserData);
+    } catch (error) {
+      res.send({ error });
     }
+    // if (req.body) {
+    //   if () {
+        
+    //   } else {
+    //     res.send({ message: "please upload image" });
+    //   }
+    // } else {
+    //   res.send({ message: "you are not authorized" });
+    // }
   }
 );
 

@@ -4,6 +4,7 @@ import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllusers } from "../../redux/admin/admin.action";
 import TableTemplate from "./TableTemplate";
+import EditForm from "./EditForm";
 
 const UserTable = () => {
   const dispatch = useDispatch();
@@ -11,6 +12,8 @@ const UserTable = () => {
   useEffect(() => {
     dispatch(getAllusers());
   }, [dispatch]);
+
+  
 
   const columns = React.useMemo(
     () => [
@@ -53,10 +56,22 @@ const UserTable = () => {
           return moment(d.updatedAt).local().format("DD/MM/YY, hh:mm a");
         },
       },
+      {
+        Header: 'Action',
+            accessor: 'action',
+            Cell: row => (
+            <div>
+               <EditForm  data={row.row.original} />
+            </div>
+            ),
+      }
     ],
     []
   );
 
+
+
+  
   return (
     <Box px="5" py="3" overflowX={"scroll"}>
       <Heading as="h3" textAlign={"center"} fontSize="2xl">
