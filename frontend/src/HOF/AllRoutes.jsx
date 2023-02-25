@@ -6,6 +6,7 @@ import KidsPage from "../pages/categoriesPages/KidsPage";
 import MenPage from "../pages/categoriesPages/MenPage";
 import WomenPage from "../pages/categoriesPages/WomenPage";
 import CheckoutPage from "../pages/checkoutPage/CheckoutPage";
+import AddNewProductForm from "../pages/dashboard/AddNewProductForm";
 import DashBoard from "../pages/dashboard/DashBoard";
 import ProductTable from "../pages/dashboard/ProductTable";
 import UserTable from "../pages/dashboard/UserTable";
@@ -33,6 +34,14 @@ const AllRoutes = () => {
         element={
           <RoutesForAdminOnly>
             <ProductTable />
+          </RoutesForAdminOnly>
+        }
+      />
+      <Route
+        path="/dashboard/products/add"
+        element={
+          <RoutesForAdminOnly>
+            <AddNewProductForm />
           </RoutesForAdminOnly>
         }
       />

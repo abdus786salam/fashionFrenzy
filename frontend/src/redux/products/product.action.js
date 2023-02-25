@@ -31,6 +31,9 @@ const getProductByCategory=(params) =>(dispatch)=>{
     })
 }
 
+const updateProductData=(data)=>{
+    return axios.patch(`${base_url}/product/update`,data)
+}
 
 const findSubCategory=(arr)=>{
     const subCategory = Object.values(arr.reduce((a,{sub_type,_id})=>{
@@ -40,4 +43,4 @@ const findSubCategory=(arr)=>{
      return subCategory
 }
 
-export { getAllProducts, getProductByCategory, findSubCategory,getSearchResults }
+export { getAllProducts, getProductByCategory, findSubCategory,getSearchResults, updateProductData }

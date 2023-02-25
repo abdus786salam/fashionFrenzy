@@ -21,11 +21,11 @@ const DashBoard = () => {
             DashBoard
           </Heading>
           <SimpleGrid
-            columns={{ sm: 2, md: 3, lg: 4 }}
+            columns={{ sm: 1, md: 2, lg: 4 }}
             spacing={{ base: 5, md: 10 }}
             mt="10"
           >
-            <Box shadow="md" borderWidth="1px" flex="1" p="5" bg='blackAlpha.50'>
+            <Box shadow="md" borderWidth="1px" w={300} flex="1" p="5" bg='blackAlpha.50'>
               <Heading as="h3" fontSize={"md"} color='gray.500'>
                  Customers
               </Heading>

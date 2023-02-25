@@ -1,13 +1,15 @@
-import { Box, Heading, Image } from "@chakra-ui/react";
+import { Box, Heading, Image, useToast } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllusers } from "../../redux/admin/admin.action";
 import TableTemplate from "./TableTemplate";
-import EditForm from "./EditForm";
+import EditForm from "../../components/EditForm";
+import { updateUserData } from "../../redux/user/user.action";
 
 const UserTable = () => {
   const dispatch = useDispatch();
+  const toast = useToast();
   const { users } = useSelector((store) => store.adminReducer);
   useEffect(() => {
     dispatch(getAllusers());
@@ -57,11 +59,11 @@ const UserTable = () => {
         },
       },
       {
-        Header: 'Action',
+        Header: 'Edit Data',
             accessor: 'action',
             Cell: row => (
             <div>
-               <EditForm  data={row.row.original} />
+               <EditForm  data={row.row.original} handleSubmit={handleSubmit} />
             </div>
             ),
       }
@@ -69,7 +71,18 @@ const UserTable = () => {
     []
   );
 
-
+  const handleSubmit = (data) => {
+    updateUserData(data).then((res) => {
+      toast({
+        title: "Update successful",
+        status: "info",
+        duration: 5000,
+        position: "top",
+        isClosable: true,
+      });
+      dispatch(getAllusers());
+    });
+  };
 
   
   return (
