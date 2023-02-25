@@ -1,13 +1,17 @@
-import { Box, Heading, Image } from "@chakra-ui/react";
+import { Box, Heading, Image, useToast } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProductsForAdmin } from "../../redux/admin/admin.action";
 import TableTemplate from "./TableTemplate";
+import EditForm from "../../components/EditForm";
+import { updateProductData } from "../../redux/products/product.action";
 
 const ProductTable = () => {
   const dispatch = useDispatch();
+  const toast = useToast();
   const { products } = useSelector((store) => store.adminReducer);
+  console.log(products)
   useEffect(() => {
     dispatch(getAllProductsForAdmin());
   }, [dispatch]);
@@ -48,7 +52,7 @@ const ProductTable = () => {
       {
         Header: "Seller Name",
         accessor:(d)=>{
-          return d.seller.name
+          return d?.seller?.name||'admin'
         },
       },
       {
@@ -63,9 +67,31 @@ const ProductTable = () => {
           return moment(d.updatedAt).local().format("DD/MM/YY, hh:mm a");
         },
       },
+      {
+        Header: 'Edit Data',
+            accessor: 'action',
+            Cell: row => (
+            <div>
+               <EditForm  data={row.row.original} handleSubmit={handleSubmit}/>
+            </div>
+            ),
+      }
     ],
     []
   );
+
+  const handleSubmit = (data) => {
+    updateProductData(data).then((res) => {
+      toast({
+        title: "Update successful",
+        status: "info",
+        duration: 5000,
+        position: "top",
+        isClosable: true,
+      });
+      dispatch(getAllProductsForAdmin());
+    });
+  };
 
   return (
         <Box px="5" py="3" overflowX={'scroll'}>

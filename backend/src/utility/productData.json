@@ -216,7 +216,6 @@
     "category": "men",
     "price": 500
   },
-  {},
   {
     "url": "https://www.jcrew.com/s7-img-facade/BN780_NA6407?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "title": "Mount Snow X J.Crew embroidered baseball cap in corduroy",
@@ -225,6 +224,7 @@
     "category": "accessories",
     "price": 300
   },
+  
   {
     "url": "https://www.jcrew.com/s7-img-facade/BJ318_YL5622?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "title": "Cotton beanie",
@@ -233,6 +233,7 @@
     "price": 400,
     "category": "accessories"
   },
+
   {
     "url": "https://www.jcrew.com/s7-img-facade/BM329_PP3779_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420",
     "title": "Harris Tweed® cloth baseball cap",

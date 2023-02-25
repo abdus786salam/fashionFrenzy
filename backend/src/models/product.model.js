@@ -18,7 +18,7 @@ const productSchema = mongoose.Schema({
     required: true,
     min:0
   },
-  product_type:{type:String,required:true},
+  // product_type:{type:String,required:true},
   sub_type:{type:String,required:true},
   category: {
     type: String,
